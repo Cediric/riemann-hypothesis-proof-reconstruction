@@ -18,6 +18,8 @@ A source-audited, human-readable reconstruction of the public Lean development a
 | [V3.2 — Counts and Galois cohomology lengths](docs/V3.2_Counts_and_Galois_Cohomology_Lengths.md) | Separates global Sha, H², and local length quantities and traces the CountI/II/III/IV/V/Vs/Z branches. |
 | [V3.3 — Kato Euler systems, LemmaK, and window constants](docs/V3.3_Kato_Euler_Systems_LemmaK_and_Window_Constants.md) | Expands the Kato/Euler-system route, finite H² bounds, SP4 image density, and window constants. |
 | [V3.4 — K4/K5 inputs, Hecke projection, and ZetaUr](docs/V3.4_K4_K5_Inputs_Hecke_Projection_and_ZetaUr.md) | Audits `Nf`, `SrcUr`, `AdmWn`, the construction of `AdmTop2`, K4/K5, and the acyclic route through `ZetaUr` to `VWin`. |
+| [V3.5 — Foundational Glue2 inputs](docs/V3.5_Glue2_Foundational_Inputs_Eisenstein_Towers_and_Measure.md) | Expands the ordinary Eisenstein eigenfunctional, modular-function tower, bounded-distribution power series, valuation embedding, coefficient-ring enlargement, and monotonicity inputs. |
+| [V3.6 — Representation and local inputs](docs/V3.6_Glue2_Representation_Local_Inputs_and_Pin7.md) | Expands `PsiEx`, `FrobU`, `DetIne`, `HatW`, `SmNz`, `GmEx`, `ExplSmul`, and the assembly of `Pin7`. |
 
 ## Source snapshot
 
@@ -36,7 +38,7 @@ The finite arithmetic certificate checks only its stated finite examples. These 
 
 ## Current research direction
 
-The latest audit target is the long auxiliary input list passed to `glue2` in the Kato global-unit-law construction: `ordinaryEisensteinEigenfunctional_exists`, `meas3`, `jEx`, `coefUb`, `mono`, `psiEx`, `frobU`, `detIne`, `hatW`, `pinOf`, `smNz`, `gmEx`, `explSmul`, `avgEq`, `avgMF`, `rhsEq`, `smSys`, and `chiFix`. The next pass will classify each input by its actual theorem source, proof body, and any remaining assumptions. See the [V3.4 audit](docs/V3.4_K4_K5_Inputs_Hecke_Projection_and_ZetaUr.md#12-本轮审计结论).
+The latest audit target is the final Glue2 averaging/smoothing group: `avgEq`, `avgMF`, `rhsEq`, `smSys`, and `chiFix`, followed by a line-by-line audit of `glue2` and its final output `ExistsZetaEulerSystemIwasawaData Pin7`. See the [V3.6 audit](docs/V3.6_Glue2_Representation_Local_Inputs_and_Pin7.md#10-本轮结论与下一步).
 
 ## License
 
