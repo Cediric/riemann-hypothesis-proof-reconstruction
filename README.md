@@ -27,6 +27,7 @@ A source-audited, human-readable reconstruction of the public Lean development a
 | [V3.10 — LitCoh provenance and LiteratureRankN](docs/V3.10_LitCoh_Provenance_and_LiteratureRankN.md) | Traces all 12 `LitCoh` fields to their theorem constructors, follows `OpenImageCondition` and `RowT` back to `TLiftK`, and audits the assembly into `LiteratureRankNHypothesis` and `HypothesesH'`. |
 | [V3.11 — Local Tate duality and Bloch–Kato local](docs/V3.11_Local_Tate_Duality_and_BlochKatoLocal.md) | Expands `SgcRep/Sgc0/Sgc1/Sgc2`, local field and roots-of-unity inputs, constructs `LocalTateDualityK` and `LocalEulerCharK`, and follows `formsL → bkAL → bkBL → BlochKatoLocal`. |
 | [V3.12 — Local invariant, Kummer pairing and BK dimension](docs/V3.12_Local_Invariant_Kummer_and_BK_Dimension.md) | Constructs the Brauer invariant from finite unramified levels and Frobenius evaluation, derives the Kummer perfect pairing, and expands `bkADim` through `aMap`, `bMap`, and `relR`. |
+| [V3.13 — Fontaine fundamental sequence and crystalline lifting](docs/V3.13_Fontaine_Fundamental_Sequence_and_Crystalline_Lifting.md) | Traces `FontaineBcris` through `LocTied`, proves the tensor fundamental sequence, constructs connecting Bloch–Kato cocycles, and lifts crystalline coboundaries using filtered invariants. |
 
 ## Source snapshot
 
@@ -45,7 +46,7 @@ The finite arithmetic certificate checks only its stated finite examples. These 
 
 ## Current research direction
 
-The latest completed audit is V3.12, which reconstructs the local Brauer invariant from unramified levels and Frobenius evaluation, proves the Kummer perfect pairing, and expands the Bloch–Kato dimension formula through `relR`. The next target is the p-adic Hodge fundamental exact sequence, construction of Bloch–Kato cocycles from period pairs, and crystalline coboundary lifting. See [V3.12](docs/V3.12_Local_Invariant_Kummer_and_BK_Dimension.md#7-下一轮v313).
+The latest completed audit is V3.13, which reconstructs the Fontaine fundamental exact sequence, the connecting Bloch–Kato cocycle, and crystalline coboundary lifting from `LocTied` and filtered invariants. The next target is the tensor injectivity input behind `FontaineBcris`, together with `FundOnto`, `Regular`, and the graded invariant constructions. See [V3.13](docs/V3.13_Fontaine_Fundamental_Sequence_and_Crystalline_Lifting.md#10-下一轮v314).
 
 ## License
 
