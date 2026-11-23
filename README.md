@@ -22,6 +22,7 @@ A source-audited, human-readable reconstruction of the public Lean development a
 | [V3.5 supplement — Ordinary Eisenstein eigenfunctional proof](docs/V3.5_Ordinary_Eisenstein_Eigenfunctional_Construction.md) | Deepens the ordinary Eisenstein eigenfunctional audit: depletion, unit-root splitting, Petersson/Sturm construction, Rankin nonvanishing, Atkin–Lehner extension, MeasMu, and the right-edge twisted-L nonvanishing argument. |
 | [V3.6 — Representation and local inputs](docs/V3.6_Glue2_Representation_Local_Inputs_and_Pin7.md) | Expands `PsiEx`, `FrobU`, `DetIne`, `HatW`, `SmNz`, `GmEx`, `ExplSmul`, and the assembly of `Pin7`. |
 | [V3.7 — Average identities and final Glue2 assembly](docs/V3.7_AvgEq_AvgMF_RhsEq_Smoothing_and_Glue2.md) | Expands `AvgEq`, `AvgMF`, `RhsEq`, `SmSys`, and `ChiFix`, then traces the 235-line `glue2` proof into `ExistsZetaEulerSystemIwasawaData Pin7`. |
+| [V3.8 — Pin7 local nonvanishing and ZetaUr](docs/V3.8_Pin7_Local_Nonvanishing_and_ZetaUr.md) | Audits `C7.pLocu`: the contradiction from `¬NzAt` to `SpZero`, `pCore`, p-adic power-series nonvanishing transfer, `NzAt`, and finally `ZetaUr`. |
 
 ## Source snapshot
 
