@@ -36,7 +36,7 @@ These are finite diagnostic checks, **not** a proof of the general automorphic o
 
 ## Current research direction
 
-The next audit target is the upstream construction of the `Tools_k` package—especially the actual derivation of `swFull`, `boxSec`, `dbl`, `basic`, and `cpt`—and how those inputs are assembled into `TLift_k`. See [the V2.8 audit and remaining gaps](docs/V2.8_Rallis_Schur_ThetaLift_Nonvanishing.md#6-本轮审计结论与剩余缺口).
+The next audit target is the upstream construction of the `Tools_k` package—especially the actual derivation of `swFull`, `boxSec`, `dbl`, `basic`, and `cpt`—and how those inputs are assembled into `TLift_k`. See the [V2.9 Tools_k dependency audit](docs/V2.9_Tools_Package_Construction_Audit.md#5-当前审计等级与下一步).
 
 ## License
 
