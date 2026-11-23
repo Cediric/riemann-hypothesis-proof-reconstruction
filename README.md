@@ -28,6 +28,7 @@ A source-audited, human-readable reconstruction of the public Lean development a
 | [V3.11 — Local Tate duality and Bloch–Kato local](docs/V3.11_Local_Tate_Duality_and_BlochKatoLocal.md) | Expands `SgcRep/Sgc0/Sgc1/Sgc2`, local field and roots-of-unity inputs, constructs `LocalTateDualityK` and `LocalEulerCharK`, and follows `formsL → bkAL → bkBL → BlochKatoLocal`. |
 | [V3.12 — Local invariant, Kummer pairing and BK dimension](docs/V3.12_Local_Invariant_Kummer_and_BK_Dimension.md) | Constructs the Brauer invariant from finite unramified levels and Frobenius evaluation, derives the Kummer perfect pairing, and expands `bkADim` through `aMap`, `bMap`, and `relR`. |
 | [V3.13 — Fontaine fundamental sequence and crystalline lifting](docs/V3.13_Fontaine_Fundamental_Sequence_and_Crystalline_Lifting.md) | Traces `FontaineBcris` through `LocTied`, proves the tensor fundamental sequence, constructs connecting Bloch–Kato cocycles, and lifts crystalline coboundaries using filtered invariants. |
+| [V3.14 — FontaineBcris foundations and filtered invariants](docs/V3.14_FontaineBcris_Foundations_and_Filtered_Invariants.md) | Derives `TensorInj` from unramified linear independence, constructs `FontaineBcris` via `FundOnto` and `1−φ`, and proves graded inverse/invariant lemmas and `DeRhamSpan`. |
 
 ## Source snapshot
 
@@ -46,7 +47,7 @@ The finite arithmetic certificate checks only its stated finite examples. These 
 
 ## Current research direction
 
-The latest completed audit is V3.13, which reconstructs the Fontaine fundamental exact sequence, the connecting Bloch–Kato cocycle, and crystalline coboundary lifting from `LocTied` and filtered invariants. The next target is the tensor injectivity input behind `FontaineBcris`, together with `FundOnto`, `Regular`, and the graded invariant constructions. See [V3.13](docs/V3.13_Fontaine_Fundamental_Sequence_and_Crystalline_Lifting.md#10-下一轮v314).
+The latest completed audit is V3.14, which reconstructs `TensorInj`, `FontaineBcris`, `FundOnto`, `1−φ` surjectivity, `Regular`, and the graded inverse/invariant lemmas. The next target is the Artin–Schreier–Witt iteration, the `Bcris = Acris[1/t]` localization proof, and the Galois-invariant period-field identification. See [V3.14](docs/V3.14_FontaineBcris_Foundations_and_Filtered_Invariants.md#11-下一轮v315).
 
 ## License
 
