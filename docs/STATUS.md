@@ -57,3 +57,14 @@ Next: expand the standard Siegel–Weil formula's CT-splitting/Poisson inputs, t
 - Added `docs/V3.1_Sha_Windows_Chebyshev_and_ZeroFree.md`.
 
 Next: expand CountI/II/III/V/Z and the Kato/Hida/SP4/reduced-unitary-lift estimates; separately expand the spherical closure `Tr.closeSph) and the (L^3)-type covolume estimate.
+
+## V3.2 update — 2026-11-23
+
+- Separated the three formal length quantities: global `shaLen` (length of a Sha submodule of H¹), `VLen` (length of H²), and local normalized `Vlen/Vn`.
+- Recovered the exact CountI/II/III/IV/V/Vs/Z case split; corrected the earlier abbreviated list by recording CountIV and CountVs as actual inputs to `pointHV_of_counts`.
+- Traced CountI through OneChar, KatoTwoW/Bloch–Kato vanishing, 3-dimensional Galois representations, Frobenius trace estimates, CorGK, and the global orbit sum.
+- Traced CountII/III through SP4 image density and adjoint lifting; CountIV/V/Vs through field extensions, Euler characteristic, local/global duality, and host bounds; CountZ through geometric PropZ.
+- Confirmed `SumIn + SumOut → PointHV → ThmHV → JointWin → VWin`.
+- Added `docs/V3.2_Counts_and_Galois_Cohomology_Lengths.md`.
+
+Next: inspect the exact theorem inputs behind `KatoTwoW), `sp4Main_alt), `ThmS6_s), `ThmBab), `ThmBcFree), and `LemmaK).
