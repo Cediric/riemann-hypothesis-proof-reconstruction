@@ -27,3 +27,13 @@
 2. Expand the dependencies `swFull`, `boxSec`, `dbl`, `basic`, and `cpt` into explicit mathematical statements.
 3. For each dependency, separate proved Lean lemmas, imported published results, and hypotheses/bridges that still need mathematical explanation.
 4. Keep every new claim pinned to a source commit and add counterexamples where a tempting inference is invalid.
+
+## V2.9 update — 2026-11-23
+
+- Confirmed that `Tools_k` is explicitly assembled in `TPGHolds.lean`; it is not merely passed as an unproved parameter at the `TLift_k` stage.
+- Confirmed `tLift_holds_k : TLift_k` is constructed from `tools_holds_k` and `hgtEx_of_k stab2Cpt_k`.
+- Traced the `cpt) field through `cptAll_of_k`, `SiegelAll`, `SiegelSetUnitary`, and the internal `SiegelCore) proof.
+- Traced `swFull) through anisotropic Siegel–Weil, Eisenstein continuation, and Box-section inputs.
+- Added `docs/V2.9_Tools_Package_Construction_Audit.md`.
+
+Next: expand the standard Siegel–Weil formula's CT-splitting/Poisson inputs, then trace `TLift_k → arithmetic main inequality (M) → final RH statement`.
