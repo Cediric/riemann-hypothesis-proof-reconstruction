@@ -14,7 +14,6 @@ concurrency:
 
 jobs:
   fresh-kernel-replay:
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-24.04
     timeout-minutes: 360
     steps:
@@ -53,7 +52,8 @@ jobs:
             echo "Audit commit: $(git -C ../audit rev-parse HEAD)"
             lean --version
             lake --version
-            leanchecker --help | head -40
+            command -v leanchecker
+            leanchecker --help 2>&1 | head -40 || true
             echo "CPU cores: $(nproc)"
             free -h
             df -h
