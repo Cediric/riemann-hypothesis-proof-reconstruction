@@ -46,3 +46,14 @@ Next: expand the standard Siegel–Weil formula's CT-splitting/Poisson inputs, t
 - Recorded the three-field `OpenLiteratureStatements` construction in `MainConclusion.lean`; its Row0b fields are supplied by the proved Galois-representation theorem and the Local Langlands field by `recTExists`.
 - Added `docs/V3.0_TLiftK_to_RH_TopLevel_Chain.md`.
 - Important reproducibility boundary: the upstream README says no independent build/review had been published at mirroring time and recommends `lake build Main` plus `#print axioms`. The current environment has no `lean` or `lake`, so no independent compile or axiom report is claimed.
+
+## V3.1 update — 2026-11-23
+
+- Expanded `VWin`: it is a long-window bound for the weighted formal Galois-cohomology quantity `shaLen` over cyclotomic number fields satisfying `IsChiField`, not a generic window-existence assertion.
+- Traced `Row0b → LiteratureRankNHypothesis → HypothesesH' → CountI/II/III/V/Z + LemmaK/ThmBab/ThmBcFree → VWin`.
+- Traced `VWin → supplyChi → HostExW`; `TopG) plus Green and nonempty `HypsAlt) yields Chebyshev bounds on long windows.
+- Confirmed `TopWin.level_of_tiedWin` uses `FormB) and a small-epsilon exponent comparison to rule out zeros with real part above 1/2.
+- Expanded the other branch: `ThetaIntegralsAgree), `LocalMatching), and `CovolumeBoundOfX) feed the nonempty definite-side `HypsAlt) construction.
+- Added `docs/V3.1_Sha_Windows_Chebyshev_and_ZeroFree.md`.
+
+Next: expand CountI/II/III/V/Z and the Kato/Hida/SP4/reduced-unitary-lift estimates; separately expand the spherical closure `Tr.closeSph) and the (L^3)-type covolume estimate.
