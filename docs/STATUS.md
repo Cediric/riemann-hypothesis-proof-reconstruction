@@ -68,3 +68,14 @@ Next: expand CountI/II/III/V/Z and the Kato/Hida/SP4/reduced-unitary-lift estima
 - Added `docs/V3.2_Counts_and_Galois_Cohomology_Lengths.md`.
 
 Next: inspect the exact theorem inputs behind `KatoTwoW), `sp4Main_alt), `ThmS6_s), `ThmBab), `ThmBcFree), and `LemmaK).
+
+## V3.3 update — 2026-11-23
+
+- Expanded CountI's Kato route: K4 Euler-system Iwasawa classes, K5 smoothed-zeta Hodge–Tate law, Glue2, ZetaUr, VanishOrdL, KatoTwoW, OneChar, CorGK.
+- Recorded the exact role of `LemmaK): a discriminant-controlled bound for finite H² lengths; `LemmaKOfPublished` uses Poitou–Tate, local finiteness, local Tate duality, KBridge, and Hermite-normal-form torsion control.
+- Traced `ThmBab) from LemmaK + Ferrero–Washington + tower bounds.
+- Traced `ThmBcFree) from odd residue PsiBound via stick and prime bounds.
+- Expanded the SP4 branch for CountII/III: symplectic-four image density, adjoint lifting, LemmaM/M'/P, number and rigidity inputs.
+- Added `docs/V3.3_Kato_Euler_Systems_LemmaK_and_Window_Constants.md`.
+
+Next: audit K4/K5 input packages (`Nf`, `SrcUr`, `AdmWn`, `AdmTop2)), the SP4 image/rigidity hypotheses, and CountV's Euler-characteristic inputs.
