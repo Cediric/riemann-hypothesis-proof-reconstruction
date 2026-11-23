@@ -1,0 +1,90 @@
+name: Fresh Lean kernel replay
+
+on:
+  workflow_run:
+    workflows: ["Pinned Lean proof audit"]
+    types: [completed]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: lean-kernel-replay-${{ github.event.workflow_run.head_sha }}
+  cancel-in-progress: false
+
+jobs:
+  fresh-kernel-replay:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 360
+    steps:
+      - name: Checkout pinned upstream source
+        uses: actions/checkout@v4
+        with:
+          repository: CocoSgt/riemann-hypothesis-lean
+          ref: 7cbf7a0c32fca1badf05931879a37c3f8a2b03b4
+          path: upstream
+          persist-credentials: false
+
+      - name: Checkout exact audit revision used by the completed run
+        uses: actions/checkout@v4
+        with:
+          repository: Cediric/riemann-hypothesis-proof-reconstruction
+          ref: ${{ github.event.workflow_run.head_sha }}
+          path: audit
+          persist-credentials: false
+
+      - name: Install pinned Lean toolchain
+        shell: bash
+        run: |
+          set -euo pipefail
+          curl -sSf https://elan.lean-lang.org/elan-init.sh | sh -s -- -y --default-toolchain leanprover/lean4:v4.33.1
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+
+      - name: Capture replay environment
+        shell: bash
+        working-directory: upstream
+        run: |
+          set -euo pipefail
+          mkdir -p ../reports
+          {
+            echo "UTC: $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+            echo "Upstream commit: $(git rev-parse HEAD)"
+            echo "Audit commit: $(git -C ../audit rev-parse HEAD)"
+            lean --version
+            lake --version
+            leanchecker --help | head -40
+            echo "CPU cores: $(nproc)"
+            free -h
+            df -h
+          } | tee ../reports/environment.txt
+
+      - name: Fetch pinned Mathlib cache
+        working-directory: upstream
+        shell: bash
+        run: |
+          set -euo pipefail
+          lake exe cache get 2>&1 | tee ../reports/cache.log
+
+      - name: Build complete RH/GRH theorem target
+        working-directory: upstream
+        shell: bash
+        run: |
+          set -euo pipefail
+          lake build Main 2>&1 | tee ../reports/main-build.log
+
+      - name: Replay all imported and local constants in a fresh Lean environment
+        working-directory: upstream
+        shell: bash
+        run: |
+          set -euo pipefail
+          lake env leanchecker --fresh Main 2>&1 | tee ../reports/leanchecker-fresh-main.log
+
+      - name: Upload replay logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lean-kernel-replay
+          path: reports/
+          if-no-files-found: warn
+          retention-days: 14
