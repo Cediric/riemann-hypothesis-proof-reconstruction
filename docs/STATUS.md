@@ -158,3 +158,23 @@ Next: audit K4/K5 input packages (`Nf`, `SrcUr`, `AdmWn`, `AdmTop2)), the SP4 im
 - Added docs/V3.5_Ordinary_Eisenstein_Eigenfunctional_Construction.md as a supplement to the broader V3.5 Glue2 input audit.
 
 This supplement does not change the next-step priority after V3.6: audit AvgEq, AvgMF, RhsEq, SmSys, and ChiFix, then inspect glue2 line by line.
+
+
+## V3.7 update — 2026-11-23
+
+- Expanded the exact propositions `AvgEq`, `AvgMF`, `RhsEq`, `SmSys`, and `ChiFix`.
+- Traced `ser_eq_Zm` to finite Fourier transforms, divisor-sum expansions, and the parity projector; `avgEq` follows from finite character orthogonality and linearity of `Zm`.
+- Traced `avgMF` through finite Dirichlet-character Fourier expansion, local Eisenstein-product modularity, `U_l` level lowering, and the `EigAll.kill` projection onto the unique surviving character component.
+- Expanded `rhsEq` as an exact four-term expansion of the Kummer projection, using `AvgEq`, `AvgMF`, and the finite unit-group sum; the parity-mismatched branch vanishes.
+- Expanded `smSys`: `Sys` is stable under scalar multiplication, `IwSys2` under the smoothing difference and unit reindexing, and `SpLink` under the corresponding ultrametric congruence estimate.
+- Expanded `chiFix` as the standard zero extension of the unit-part character to a multiplicative, modulo-N periodic function.
+- Read `glue2` line by line: K4 constructs the raw Euler/Iwasawa system; K5 supplies the Hodge–Tate law; `RhsEq` converts it to the eight-term smoothed law; `ExplSmul` and `Mono` handle scaling and coefficient-ring enlargement; `PinOf` constructs `Pin7`; `SmSys` supplies the final smoothed system structures.
+- Unpacked `ExistsZetaEulerSystemIwasawaData Pin7`: the output includes `Sys`, `IwSys2`, `SpLink`, and the full Pin7 package of local Frobenius/inertia, power-series, Hodge–Tate, primitive-root congruence, and nonvanishing data.
+- Added `docs/V3.7_AvgEq_AvgMF_RhsEq_Smoothing_and_Glue2.md` and updated the README index.
+
+## Next steps after V3.7
+
+1. Re-audit the connection from `ExistsZetaEulerSystemIwasawaData Pin7` through the local nonvanishing package `C7.pLocu` to `ZetaUr`, checking for duplicated, missing, or strengthened conditions.
+2. Review the upstream CompanionTheory Newform API and its pinned dependency version, especially the foundational modular-form, Hecke, Eisenstein, and Petersson interfaces.
+3. When Lean/Lake is available, run the target build and axiom/dependency checks; source browsing alone is not build verification.
+4. Reconnect the verified K4/K5/Glue2 chain to the `VWin → EveryCharacter → RH` endpoint and audit the remaining top-level bridges.
