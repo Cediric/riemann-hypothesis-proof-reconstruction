@@ -36,6 +36,7 @@ A source-audited, human-readable reconstruction of the public Lean development a
 | [V3.19 — Tate inertia finiteness and Bcris Regular](docs/V3.19_TateCharacterFinite_and_BcrisRegular_Complete.md) | Consolidates the full `TateCharacterFiniteOnInertia` proof and its use in `BcrisRegular`, including the unramified Ainf period and the theta-zero branch. |
 | [V3.20 — FontaineBcris seven-field dependency audit](docs/V3.20_FontaineBcris_SevenField_Dependency_Audit.md) | Audits the seven fields, reduces the final construction to four core inputs, traces Core/Fits, and expands TensorInj, Fund, FundOnto, 1−φ surjectivity, and Regular. |
 | [V3.20 supplement — EveryCharacter to RH zero-free bridge](docs/V3.20_Supplement_EveryCharacter_ZeroFree_Bridge.md) | Reconstructs the final chain from TLiftK and VWin through Green, definite-side hypotheses, Chebyshev windows, zero-freeness, and the RH wrappers. |
+| [V3.20 supplement — TLiftK theta-lift construction](docs/V3.20_Supplement_TLiftK_ThetaLift_Construction.md) | Expands TLiftK into its 14-field Tools_k package and traces the nonvanishing/theta-lift/projection proof skeleton feeding the Galois row. |
 | [V3.20 axiom-check script](checks/Check_FontaineBcris_Axioms.lean) | Prepared `#print axioms` checks for the assembled FontaineBcris theorem and its main inputs; intended to run in the pinned upstream Lean project. |
 | [V3.21 main-theorem axiom-check script](checks/Check_Main_Axioms.lean) | Prepared `#print axioms` checks for the five public RH/GRH conclusions and the `EveryCharacter` bridge. |
 
