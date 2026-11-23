@@ -29,6 +29,7 @@ A source-audited, human-readable reconstruction of the public Lean development a
 | [V3.12 — Local invariant, Kummer pairing and BK dimension](docs/V3.12_Local_Invariant_Kummer_and_BK_Dimension.md) | Constructs the Brauer invariant from finite unramified levels and Frobenius evaluation, derives the Kummer perfect pairing, and expands `bkADim` through `aMap`, `bMap`, and `relR`. |
 | [V3.13 — Fontaine fundamental sequence and crystalline lifting](docs/V3.13_Fontaine_Fundamental_Sequence_and_Crystalline_Lifting.md) | Traces `FontaineBcris` through `LocTied`, proves the tensor fundamental sequence, constructs connecting Bloch–Kato cocycles, and lifts crystalline coboundaries using filtered invariants. |
 | [V3.14 — FontaineBcris foundations and filtered invariants](docs/V3.14_FontaineBcris_Foundations_and_Filtered_Invariants.md) | Derives `TensorInj` from unramified linear independence, constructs `FontaineBcris` via `FundOnto` and `1−φ`, and proves graded inverse/invariant lemmas and `DeRhamSpan`. |
+| [V3.15 — Core, PeriodData and Galois invariants](docs/V3.15_Core_PeriodData_and_Galois_Invariants.md) | Traces `Core → PeriodData → LocPrime → LocTheory`, constructs `invB` and `invdR`, and proves the BdR and Bcris Galois-invariant identifications. |
 
 ## Source snapshot
 
@@ -47,7 +48,7 @@ The finite arithmetic certificate checks only its stated finite examples. These 
 
 ## Current research direction
 
-The latest completed audit is V3.14, which reconstructs `TensorInj`, `FontaineBcris`, `FundOnto`, `1−φ` surjectivity, `Regular`, and the graded inverse/invariant lemmas. The next target is the Artin–Schreier–Witt iteration, the `Bcris = Acris[1/t]` localization proof, and the Galois-invariant period-field identification. See [V3.14](docs/V3.14_FontaineBcris_Foundations_and_Filtered_Invariants.md#11-下一轮v315).
+The latest completed audit is V3.15, which traces `Core → PeriodData → LocPrime → LocTheory` and constructs the `invB` / `invdR` fields through explicit Galois-invariant theorems. The next target is the Ax–Sen–Tate fixed-closure theorem, Tate-twist invariant vanishing, and cyclotomic norm/trace estimates. See [V3.15](docs/V3.15_Core_PeriodData_and_Galois_Invariants.md#8-下一轮v316).
 
 ## License
 
