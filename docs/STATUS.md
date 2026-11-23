@@ -178,3 +178,24 @@ This supplement does not change the next-step priority after V3.6: audit AvgEq, 
 2. Review the upstream CompanionTheory Newform API and its pinned dependency version, especially the foundational modular-form, Hecke, Eisenstein, and Petersson interfaces.
 3. When Lean/Lake is available, run the target build and axiom/dependency checks; source browsing alone is not build verification.
 4. Reconnect the verified K4/K5/Glue2 chain to the `VWin → EveryCharacter → RH` endpoint and audit the remaining top-level bridges.
+
+
+## V3.8 update — 2026-11-23
+
+- Expanded the exact relationship among `ExistsZetaEulerSystemIwasawaData Pin7`, `ZetaEulerSystemNonvanishing Pin7`, `ZetaSysUr2`, and `ZetaUr`.
+- Confirmed `C7.pLocu` is constructed by `LocalUnitsRoots.main`, not assumed; its two inputs are local proof wrappers for the power-series nonvanishing-transfer theorem and the inertia/cyclotomic matrix-entry theorem.
+- Reconstructed the contradiction: `¬NzAt` plus the local matrix theorem forces the cocycle coordinate to vanish on cyclotomic-trivial inertia; `SpLink` then gives `SpZero`.
+- Used `IwSys2` and inertia-triviality of `ν` to obtain `IwI`; the distinguished Frobenius in Pin7 gives the Frobenius conjugation law needed by `pCore`.
+- Expanded `pCore`: it constructs an integral power series `Gs`, a unit Cauchy sequence, a root-of-unity interpolation relation, and the implication `SpZero → IntZero`.
+- Expanded `nonvanishing_transfer`: Mellin transforms, smoothing, primitive character twists, Gauss sums, coefficient integrality, and primitive-root congruences transfer the nonzero mass condition from `L` to `Gs`.
+- Audited `autoPin_congr` and its local proof: a lowest-valuation coefficient dominates at sufficiently high-order primitive roots, giving a p-adic power-series uniqueness argument and coefficientwise congruence.
+- Confirmed the contradiction between `IntZero Gs` and the nonzero mass transferred from Pin7, proving `NzAt`.
+- Traced `NzAt → ¬Gr → ES → ZetaUr`; the nonzero inertia witness directly excludes the coboundary condition in `Gr`.
+- Added `docs/V3.8_Pin7_Local_Nonvanishing_and_ZetaUr.md` and updated the README index.
+
+## Next steps after V3.8
+
+1. Trace `VanishOrdLOfZetaUr`: verify exactly how `ZetaUr` yields Bloch–Kato Selmer-group vanishing.
+2. Compare the hypotheses of `Ord2.es_vanish` against the actual `ZetaUr` output, especially Euler-system norm relations, local conditions, and nonzero classes.
+3. Continue auditing the helper modules used by `pCore` and the pinned CompanionTheory Newform API.
+4. When Lean/Lake is available, run the target build, axiom/dependency inspection, and kernel checker; source browsing is not a substitute for compilation.
