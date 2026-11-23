@@ -37,3 +37,12 @@
 - Added `docs/V2.9_Tools_Package_Construction_Audit.md`.
 
 Next: expand the standard Siegel–Weil formula's CT-splitting/Poisson inputs, then trace `TLift_k → arithmetic main inequality (M) → final RH statement`.
+
+## V3.0 update — 2026-11-23
+
+- Recovered the top-level chain: `TLiftK → Row0b → EveryCharacter → RiemannHypothesis`.
+- Confirmed `TLiftK` is the high-rank theta-lift existence statement; it is converted to strong Galois representations through the weight-one geometric realization and crystalline descent.
+- Confirmed `EveryCharacter` is the right-half-plane nonvanishing statement for all Dirichlet L-functions; the RH endpoint uses the zeta functional equation to reflect zeros.
+- Recorded the three-field `OpenLiteratureStatements` construction in `MainConclusion.lean`; its Row0b fields are supplied by the proved Galois-representation theorem and the Local Langlands field by `recTExists`.
+- Added `docs/V3.0_TLiftK_to_RH_TopLevel_Chain.md`.
+- Important reproducibility boundary: the upstream README says no independent build/review had been published at mirroring time and recommends `lake build Main` plus `#print axioms`. The current environment has no `lean` or `lake`, so no independent compile or axiom report is claimed.
