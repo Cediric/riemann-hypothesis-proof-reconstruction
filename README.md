@@ -24,6 +24,7 @@ A source-audited, human-readable reconstruction of the public Lean development a
 | [V3.7 — Average identities and final Glue2 assembly](docs/V3.7_AvgEq_AvgMF_RhsEq_Smoothing_and_Glue2.md) | Expands `AvgEq`, `AvgMF`, `RhsEq`, `SmSys`, and `ChiFix`, then traces the 235-line `glue2` proof into `ExistsZetaEulerSystemIwasawaData Pin7`. |
 | [V3.8 — Pin7 local nonvanishing and ZetaUr](docs/V3.8_Pin7_Local_Nonvanishing_and_ZetaUr.md) | Audits `C7.pLocu`: the contradiction from `¬NzAt` to `SpZero`, `pCore`, p-adic power-series nonvanishing transfer, `NzAt`, and finally `ZetaUr`. |
 | [V3.9 — ZetaUr to ordinary Selmer vanishing](docs/V3.9_ZetaUr_to_Ordinary_Selmer_Vanishing.md) | Reconstructs `ZetaUr → VanishOrdL`: ordinary normal form, Euler-system strict vanishing, Greenberg upgrade, dual Selmer growth contradiction, Bloch–Kato local-to-ordinary conversion, and RepIso transport. |
+| [V3.10 — LitCoh provenance and LiteratureRankN](docs/V3.10_LitCoh_Provenance_and_LiteratureRankN.md) | Traces all 12 `LitCoh` fields to their theorem constructors, follows `OpenImageCondition` and `RowT` back to `TLiftK`, and audits the assembly into `LiteratureRankNHypothesis` and `HypothesesH'`. |
 
 ## Source snapshot
 
@@ -42,7 +43,7 @@ The finite arithmetic certificate checks only its stated finite examples. These 
 
 ## Current research direction
 
-The latest completed audit is V3.9, tracing `ZetaUr → VanishOrdL → KatoTwoS`. The next target is the provenance of the 12 `LitCoh` fields and a deeper audit of the local-global duality, cup-product gluing, unramified lifting, and Greenberg–Wiles inputs used by the Selmer-vanishing chain. See [V3.9](docs/V3.9_ZetaUr_to_Ordinary_Selmer_Vanishing.md#14-下一轮v310).
+The latest completed audit is V3.10, which traces `LitCoh` from its 12 field constructors through `LiteratureRankNHypothesis` and `HypothesesH'`, with `RowT` linked back to `TLiftK`. The next target is the lower-level Galois cohomology infrastructure behind `GcohTop` and the detailed `formsL` / `bkAL` / `bkBL` chain inside `BlochKatoLocal`. See [V3.10](docs/V3.10_LitCoh_Provenance_and_LiteratureRankN.md#11-下一轮v311).
 
 ## License
 
