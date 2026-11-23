@@ -35,6 +35,7 @@ A source-audited, human-readable reconstruction of the public Lean development a
 | [V3.18 — Prime-power norm and congruence chain closure](docs/V3.18_Prime_Power_Norm_and_Congruence_Chain_Closure.md) | Proves the exact norm of `u^(ℓ^n)−1`, PadicInt exact-level adjustment, finite-index kernel chain, and the coset recursion required for partial traces. |
 | [V3.19 — Tate inertia finiteness and Bcris Regular](docs/V3.19_TateCharacterFinite_and_BcrisRegular_Complete.md) | Consolidates the full `TateCharacterFiniteOnInertia` proof and its use in `BcrisRegular`, including the unramified Ainf period and the theta-zero branch. |
 | [V3.20 — FontaineBcris seven-field dependency audit](docs/V3.20_FontaineBcris_SevenField_Dependency_Audit.md) | Audits the seven fields, reduces the final construction to four core inputs, traces Core/Fits, and expands TensorInj, Fund, FundOnto, 1−φ surjectivity, and Regular. |
+| [V3.20 supplement — EveryCharacter to RH zero-free bridge](docs/V3.20_Supplement_EveryCharacter_ZeroFree_Bridge.md) | Reconstructs the final chain from TLiftK and VWin through Green, definite-side hypotheses, Chebyshev windows, zero-freeness, and the RH wrappers. |
 | [V3.20 axiom-check script](checks/Check_FontaineBcris_Axioms.lean) | Prepared `#print axioms` checks for the assembled FontaineBcris theorem and its main inputs; intended to run in the pinned upstream Lean project. |
 | [V3.21 main-theorem axiom-check script](checks/Check_Main_Axioms.lean) | Prepared `#print axioms` checks for the five public RH/GRH conclusions and the `EveryCharacter` bridge. |
 
@@ -55,7 +56,7 @@ The finite arithmetic certificate checks only its stated finite examples. These 
 
 ## Current research direction
 
-The latest completed source-level audit is V3.20, which reconstructs all seven `FontaineBcris` fields, identifies the four inputs required by `FontaineBcris.of_rest`, and traces the Core/Fits construction. The audit also expanded the `PhiInj` and `IotaInj` proofs and confirmed that `regular_of_tensorInj` does not use its TensorInj argument. The pinned execution baseline is Lean 4.33.1 with Mathlib commit `0df444a360eaa60ab8c11dca51a86af692955474`; the upstream Lake package is `tree` with `srcDir = "src"`. V3.21 now has separate axiom-audit scripts for FontaineBcris and the five RH/GRH conclusions. The next step is to run `lake exe cache get`, `lake build Statements`, `lake build Main`, both scripts, and then independent kernel replay; all execution checks remain pending.
+The latest completed source-level audits are V3.20: the FontaineBcris seven-field construction and the final EveryCharacter-to-RH zero-free bridge. Together they trace the local period-ring package, the Galois representation row, VWin, Green regular-character input, the definite-side construction, and the Chebyshev/Landau zero-free mechanism. The pinned execution baseline is Lean 4.33.1 with Mathlib commit `0df444a360eaa60ab8c11dca51a86af692955474`; the upstream Lake package is `tree` with `srcDir = "src"`. V3.21 has separate axiom-audit scripts for FontaineBcris and the five RH/GRH conclusions. The remote build workflow is now being repaired and run; no successful Lean build or theorem-level axiom audit is claimed yet.
 
 ## License
 
