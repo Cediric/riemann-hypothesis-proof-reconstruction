@@ -59,7 +59,7 @@ The finite arithmetic certificate checks only its stated finite examples. These 
 
 ## Current research direction
 
-The latest completed source-level audits are V3.20 and V3.22: FontaineBcris, the TLiftK/SiegelCore construction, the exact Mathlib RH proposition, the EveryCharacter-to-RH zero-free bridge, and the exact VWin quantifiers with their prime-pair existence chain. The pinned execution baseline is Lean 4.33.1 with Mathlib commit `0df444a360eaa60ab8c11dca51a86af692955474`; the upstream Lake package is `tree` with `srcDir = "src"`. V3.21 has separate axiom-audit scripts for FontaineBcris and the five RH/GRH conclusions. The remote run has passed the Statements target and is compiling Main; the theorem-level axiom checks remain pending.
+The latest completed source-level audits are V3.20 and V3.22: FontaineBcris, the TLiftK/SiegelCore construction, the exact Mathlib RH proposition, the EveryCharacter-to-RH zero-free bridge, and the exact VWin quantifiers with their prime-pair existence chain. The pinned execution baseline is Lean 4.33.1 with Mathlib commit `0df444a360eaa60ab8c11dca51a86af692955474`; the upstream Lake package is `tree` with `srcDir = "src"`. V3.21 has separate axiom-audit scripts for FontaineBcris and the five RH/GRH conclusions. The remote run has passed the Statements target and is compiling Main. A second workflow is configured to run `leanchecker --fresh Main` after the primary audit run completes, regardless of its outcome; this will provide a fresh-environment kernel replay attempt. The theorem-level axiom checks remain pending.
 
 ## License
 
