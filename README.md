@@ -33,6 +33,7 @@ A source-audited, human-readable reconstruction of the public Lean development a
 | [V3.16 — Ax–Sen–Tate and cyclotomic norm estimates](docs/V3.16_AxSenTate_and_Cyclotomic_Norm_Estimates.md) | Proves the bounded-orbit Ax lemma, fixed-closure approximation, Tate-twist invariant vanishing, cyclotomic norm/trace bounds, and inertia character finiteness. |
 | [V3.17 — Inertia partial trace and geometric contraction](docs/V3.17_Inertia_Partial_Trace_and_Geometric_Contraction.md) | Derives the finite-index norm estimate, inertia congruence chain, geometric-sum contraction, and the partial-trace bound `ρⁿ` feeding Tate-character finiteness. |
 | [V3.18 — Prime-power norm and congruence chain closure](docs/V3.18_Prime_Power_Norm_and_Congruence_Chain_Closure.md) | Proves the exact norm of `u^(ℓ^n)−1`, PadicInt exact-level adjustment, finite-index kernel chain, and the coset recursion required for partial traces. |
+| [V3.19 — Tate inertia finiteness and Bcris Regular](docs/V3.19_TateCharacterFinite_and_BcrisRegular_Complete.md) | Consolidates the full `TateCharacterFiniteOnInertia` proof and its use in `BcrisRegular`, including the unramified Ainf period and the theta-zero branch. |
 
 ## Source snapshot
 
@@ -51,7 +52,7 @@ The finite arithmetic certificate checks only its stated finite examples. These 
 
 ## Current research direction
 
-The latest completed audit is V3.18, which closes the prime-power norm formula, exact-level adjustment, finite-index kernel chain, and coset recursion. The next target is a single theorem-by-theorem reconstruction of TateCharacterFiniteOnInertia and its use in Bcris Regular. See [V3.18](docs/V3.18_Prime_Power_Norm_and_Congruence_Chain_Closure.md#7-下一轮v319).
+The latest completed audit is V3.19, which consolidates the complete `TateCharacterFiniteOnInertia` proof and both branches of `BcrisRegular`. The next target is a seven-field dependency audit of `FontaineBcris`, including the theorem/axiom status of `TensorInj`, `FundOnto`, `Fund`, `1−φ` surjectivity, and `Regular`. See [V3.19](docs/V3.19_TateCharacterFinite_and_BcrisRegular_Complete.md#14-下一轮v320).
 
 ## License
 
