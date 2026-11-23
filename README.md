@@ -31,6 +31,7 @@ A source-audited, human-readable reconstruction of the public Lean development a
 | [V3.14 — FontaineBcris foundations and filtered invariants](docs/V3.14_FontaineBcris_Foundations_and_Filtered_Invariants.md) | Derives `TensorInj` from unramified linear independence, constructs `FontaineBcris` via `FundOnto` and `1−φ`, and proves graded inverse/invariant lemmas and `DeRhamSpan`. |
 | [V3.15 — Core, PeriodData and Galois invariants](docs/V3.15_Core_PeriodData_and_Galois_Invariants.md) | Traces `Core → PeriodData → LocPrime → LocTheory`, constructs `invB` and `invdR`, and proves the BdR and Bcris Galois-invariant identifications. |
 | [V3.16 — Ax–Sen–Tate and cyclotomic norm estimates](docs/V3.16_AxSenTate_and_Cyclotomic_Norm_Estimates.md) | Proves the bounded-orbit Ax lemma, fixed-closure approximation, Tate-twist invariant vanishing, cyclotomic norm/trace bounds, and inertia character finiteness. |
+| [V3.17 — Inertia partial trace and geometric contraction](docs/V3.17_Inertia_Partial_Trace_and_Geometric_Contraction.md) | Derives the finite-index norm estimate, inertia congruence chain, geometric-sum contraction, and the partial-trace bound `ρⁿ` feeding Tate-character finiteness. |
 
 ## Source snapshot
 
@@ -49,7 +50,7 @@ The finite arithmetic certificate checks only its stated finite examples. These 
 
 ## Current research direction
 
-The latest completed audit is V3.16, which reconstructs the bounded-orbit Ax lemma, Ax–Sen–Tate fixed closure, Tate-twist invariant vanishing, cyclotomic norm/trace bounds, and inertia character finiteness. The next target is the geometric partial-trace estimates and the finite-quotient group-theoretic steps that feed the inertia argument. See [V3.16](docs/V3.16_AxSenTate_and_Cyclotomic_Norm_Estimates.md#9-下一轮v317).
+The latest completed audit is V3.17, which derives the inertia congruence chain, finite-index norm bound, geometric-sum contraction, and partial-trace decay `ρⁿ`. The next target is the remaining prime-power norm lemma, exact-level congruence hypotheses, and a consolidated proof of Tate-character finiteness and Bcris Regular. See [V3.17](docs/V3.17_Inertia_Partial_Trace_and_Geometric_Contraction.md#9-下一轮v318).
 
 ## License
 
