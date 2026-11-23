@@ -25,6 +25,7 @@ A source-audited, human-readable reconstruction of the public Lean development a
 | [V3.8 — Pin7 local nonvanishing and ZetaUr](docs/V3.8_Pin7_Local_Nonvanishing_and_ZetaUr.md) | Audits `C7.pLocu`: the contradiction from `¬NzAt` to `SpZero`, `pCore`, p-adic power-series nonvanishing transfer, `NzAt`, and finally `ZetaUr`. |
 | [V3.9 — ZetaUr to ordinary Selmer vanishing](docs/V3.9_ZetaUr_to_Ordinary_Selmer_Vanishing.md) | Reconstructs `ZetaUr → VanishOrdL`: ordinary normal form, Euler-system strict vanishing, Greenberg upgrade, dual Selmer growth contradiction, Bloch–Kato local-to-ordinary conversion, and RepIso transport. |
 | [V3.10 — LitCoh provenance and LiteratureRankN](docs/V3.10_LitCoh_Provenance_and_LiteratureRankN.md) | Traces all 12 `LitCoh` fields to their theorem constructors, follows `OpenImageCondition` and `RowT` back to `TLiftK`, and audits the assembly into `LiteratureRankNHypothesis` and `HypothesesH'`. |
+| [V3.11 — Local Tate duality and Bloch–Kato local](docs/V3.11_Local_Tate_Duality_and_BlochKatoLocal.md) | Expands `SgcRep/Sgc0/Sgc1/Sgc2`, local field and roots-of-unity inputs, constructs `LocalTateDualityK` and `LocalEulerCharK`, and follows `formsL → bkAL → bkBL → BlochKatoLocal`. |
 
 ## Source snapshot
 
@@ -43,7 +44,7 @@ The finite arithmetic certificate checks only its stated finite examples. These 
 
 ## Current research direction
 
-The latest completed audit is V3.10, which traces `LitCoh` from its 12 field constructors through `LiteratureRankNHypothesis` and `HypothesesH'`, with `RowT` linked back to `TLiftK`. The next target is the lower-level Galois cohomology infrastructure behind `GcohTop` and the detailed `formsL` / `bkAL` / `bkBL` chain inside `BlochKatoLocal`. See [V3.10](docs/V3.10_LitCoh_Provenance_and_LiteratureRankN.md#11-下一轮v311).
+The latest completed audit is V3.11, which reconstructs the local Tate duality and Euler characteristic infrastructure and follows `formsL → bkAL → bkBL → BlochKatoLocal`. The next target is the local invariant/Kummer perfect pairing, the Dcris/DdR filtration bridge in `bkADim_of_tied`, and the rational/integral duality conversions. See [V3.11](docs/V3.11_Local_Tate_Duality_and_BlochKatoLocal.md#8-下一轮v312).
 
 ## License
 
