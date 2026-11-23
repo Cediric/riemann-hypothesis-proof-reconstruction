@@ -1,0 +1,119 @@
+name: Pinned Lean proof audit
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/lean-proof-audit.yml"
+      - "checks/**"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: lean-proof-audit-\${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  pinned-build-and-axioms:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 360
+    steps:
+      - name: Checkout pinned upstream source
+        uses: actions/checkout@v4
+        with:
+          repository: CocoSgt/riemann-hypothesis-lean
+          ref: 7cbf7a0c32fca1badf05931879a37c3f8a2b03b4
+          path: upstream
+          persist-credentials: false
+
+      - name: Checkout audit scripts
+        uses: actions/checkout@v4
+        with:
+          repository: Cediric/riemann-hypothesis-proof-reconstruction
+          ref: \${{ github.sha }}
+          path: audit
+          persist-credentials: false
+
+      - name: Install pinned Lean toolchain
+        shell: bash
+        run: |
+          set -euo pipefail
+          curl -sSf https://elan.lean-lang.org/elan-init.sh | sh -s -- -y --default-toolchain leanprover/lean4:v4.33.1
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+
+      - name: Capture environment
+        shell: bash
+        working-directory: upstream
+        run: |
+          set -euo pipefail
+          mkdir -p ../reports
+          {
+            echo "UTC: $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+            echo "Upstream commit: $(git rev-parse HEAD)"
+            echo
+            lean --version
+            lake --version
+            echo
+            echo "CPU cores: $(nproc)"
+            free -h
+            df -h
+          } | tee ../reports/environment.txt
+
+      - name: Fetch pinned Mathlib cache
+        shell: bash
+        working-directory: upstream
+        run: |
+          set -euo pipefail
+          lake exe cache get 2>&1 | tee ../reports/cache.log
+
+      - name: Build statement definitions
+        shell: bash
+        working-directory: upstream
+        run: |
+          set -euo pipefail
+          lake build Statements 2>&1 | tee ../reports/statements-build.log
+
+      - name: Build complete RH/GRH theorem target
+        shell: bash
+        working-directory: upstream
+        run: |
+          set -euo pipefail
+          lake build Main 2>&1 | tee ../reports/main-build.log
+
+      - name: Build FontaineBcris audit modules
+        shell: bash
+        working-directory: upstream
+        run: |
+          set -euo pipefail
+          lake build \
+            Development.AbelianVarietyTheory.Proofs.InertiaEigenvalues.FontaineBcrisBasicTheoremsProof \
+            Development.AbelianVarietyTheory.Proofs.InertiaEigenvalues.FontaineBcrisHolds \
+            Development.AbelianVarietyTheory.Proofs.InertiaEigenvalues.FontaineBcrisBasicTheoremsProofStatement \
+            2>&1 | tee ../reports/fontaine-modules-build.log
+
+      - name: Run FontaineBcris axiom audit
+        shell: bash
+        working-directory: upstream
+        run: |
+          set -euo pipefail
+          cp ../audit/checks/Check_FontaineBcris_Axioms.lean .
+          lake env lean Check_FontaineBcris_Axioms.lean 2>&1 | tee ../reports/fontaine-axioms.log
+
+      - name: Run top-level RH/GRH axiom audit
+        shell: bash
+        working-directory: upstream
+        run: |
+          set -euo pipefail
+          cp ../audit/checks/Check_Main_Axioms.lean .
+          lake env lean Check_Main_Axioms.lean 2>&1 | tee ../reports/main-axioms.log
+
+      - name: Upload complete audit logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lean-proof-audit-\${{ github.run_id }}
+          path: reports/
+          if-no-files-found: warn
+          retention-days: 14
