@@ -23,6 +23,7 @@ A source-audited, human-readable reconstruction of the public Lean development a
 | [V3.6 — Representation and local inputs](docs/V3.6_Glue2_Representation_Local_Inputs_and_Pin7.md) | Expands `PsiEx`, `FrobU`, `DetIne`, `HatW`, `SmNz`, `GmEx`, `ExplSmul`, and the assembly of `Pin7`. |
 | [V3.7 — Average identities and final Glue2 assembly](docs/V3.7_AvgEq_AvgMF_RhsEq_Smoothing_and_Glue2.md) | Expands `AvgEq`, `AvgMF`, `RhsEq`, `SmSys`, and `ChiFix`, then traces the 235-line `glue2` proof into `ExistsZetaEulerSystemIwasawaData Pin7`. |
 | [V3.8 — Pin7 local nonvanishing and ZetaUr](docs/V3.8_Pin7_Local_Nonvanishing_and_ZetaUr.md) | Audits `C7.pLocu`: the contradiction from `¬NzAt` to `SpZero`, `pCore`, p-adic power-series nonvanishing transfer, `NzAt`, and finally `ZetaUr`. |
+| [V3.9 — ZetaUr to ordinary Selmer vanishing](docs/V3.9_ZetaUr_to_Ordinary_Selmer_Vanishing.md) | Reconstructs `ZetaUr → VanishOrdL`: ordinary normal form, Euler-system strict vanishing, Greenberg upgrade, dual Selmer growth contradiction, Bloch–Kato local-to-ordinary conversion, and RepIso transport. |
 
 ## Source snapshot
 
@@ -41,7 +42,7 @@ The finite arithmetic certificate checks only its stated finite examples. These 
 
 ## Current research direction
 
-The latest audit target is the final Glue2 averaging/smoothing group: `avgEq`, `avgMF`, `rhsEq`, `smSys`, and `chiFix`, followed by a line-by-line audit of `glue2` and its final output `ExistsZetaEulerSystemIwasawaData Pin7`. See the [V3.6 audit](docs/V3.6_Glue2_Representation_Local_Inputs_and_Pin7.md#10-本轮结论与下一步).
+The latest completed audit is V3.9, tracing `ZetaUr → VanishOrdL → KatoTwoS`. The next target is the provenance of the 12 `LitCoh` fields and a deeper audit of the local-global duality, cup-product gluing, unramified lifting, and Greenberg–Wiles inputs used by the Selmer-vanishing chain. See [V3.9](docs/V3.9_ZetaUr_to_Ordinary_Selmer_Vanishing.md#14-下一轮v310).
 
 ## License
 
