@@ -1,4 +1,6 @@
 import Development.AbelianVarietyTheory.Proofs.InertiaEigenvalues.FontaineBcrisBasicTheoremsProof
+import Development.AbelianVarietyTheory.Proofs.InertiaEigenvalues.FontaineBcrisHolds
+import Development.AbelianVarietyTheory.Proofs.InertiaEigenvalues.FontaineBcrisBasicTheoremsProofStatement
 
 /-!
 Copy this file into the root of the pinned upstream Lean project after its dependencies are available.
@@ -35,3 +37,7 @@ kernel replay. Preserve the exact Lean version and upstream commit with the outp
 #print axioms GlobalTheory.MemLoc.regular_of_tensorInj
 
 #print axioms GlobalTheory.Published.FontaineBcris.of_rest
+
+#print axioms GlobalTheory.Published.FontaineBcris_holds
+#print axioms GlobalTheory.Published.FontaineBcris.fund_holds
+#print axioms GlobalTheory.T.fontaineBcrisBasicTheorems_proof
