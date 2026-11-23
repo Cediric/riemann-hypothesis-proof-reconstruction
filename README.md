@@ -54,7 +54,7 @@ The finite arithmetic certificate checks only its stated finite examples. These 
 
 ## Current research direction
 
-The latest completed source-level audit is V3.20, which reconstructs all seven `FontaineBcris` fields, identifies the four inputs required by `FontaineBcris.of_rest`, and traces the Core/Fits construction. It also records that `regular_of_tensorInj` does not use its TensorInj argument. The next target is V3.21: execute the pinned Lean build, run the prepared `#print axioms` script, record the exact environment and outputs, and attempt independent kernel replay. These execution checks remain pending. See [V3.20](docs/V3.20_FontaineBcris_SevenField_Dependency_Audit.md#7-下一轮-v321执行级验证).
+The latest completed source-level audit is V3.20, which reconstructs all seven `FontaineBcris` fields, identifies the four inputs required by `FontaineBcris.of_rest`, and traces the Core/Fits construction. It also records that `regular_of_tensorInj` does not use its TensorInj argument. The pinned execution baseline is Lean 4.33.1 with Mathlib commit `0df444a360eaa60ab8c11dca51a86af692955474`; the upstream Lake package is `tree` with `srcDir = "src"`. The next target is V3.21: run `lake exe cache get`, `lake build Statements`, and `lake build Main`; run the prepared `#print axioms` script; record the exact environment and outputs; and attempt independent kernel replay. These execution checks remain pending. See [V3.20](docs/V3.20_FontaineBcris_SevenField_Dependency_Audit.md#7-下一轮-v321执行级验证).
 
 ## License
 
