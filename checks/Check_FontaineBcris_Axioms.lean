@@ -18,6 +18,14 @@ kernel replay. Preserve the exact Lean version and upstream commit with the outp
 #print axioms GlobalTheory.MemLoc.ULaws.u_laws
 #print axioms GlobalTheory.MemLoc.crisP_injective
 #print axioms GlobalTheory.MemLoc.exists_iota_cris_dR
+#print axioms GlobalTheory.MemLoc.PhiInj.approx_mem
+
+#print axioms GlobalTheory.MemLoc.GaussCore.norm_eq_zpow
+#print axioms GlobalTheory.UnramValue.le_Kur_of_norm
+#print axioms GlobalTheory.GalDisj.galois_linearDisjoint
+#print axioms GlobalTheory.MemLoc.FixR.fix_pow
+#print axioms GlobalTheory.MemLoc.FundOnto.exists_exact
+#print axioms GlobalTheory.MemLoc.OneSubPhi.onto_of_denom
 
 #print axioms GlobalTheory.MemLoc.TensorInj.tensorInj
 #print axioms GlobalTheory.MemLoc.fundamental_exact
