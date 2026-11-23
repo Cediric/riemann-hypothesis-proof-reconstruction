@@ -32,6 +32,7 @@ A source-audited, human-readable reconstruction of the public Lean development a
 | [V3.15 — Core, PeriodData and Galois invariants](docs/V3.15_Core_PeriodData_and_Galois_Invariants.md) | Traces `Core → PeriodData → LocPrime → LocTheory`, constructs `invB` and `invdR`, and proves the BdR and Bcris Galois-invariant identifications. |
 | [V3.16 — Ax–Sen–Tate and cyclotomic norm estimates](docs/V3.16_AxSenTate_and_Cyclotomic_Norm_Estimates.md) | Proves the bounded-orbit Ax lemma, fixed-closure approximation, Tate-twist invariant vanishing, cyclotomic norm/trace bounds, and inertia character finiteness. |
 | [V3.17 — Inertia partial trace and geometric contraction](docs/V3.17_Inertia_Partial_Trace_and_Geometric_Contraction.md) | Derives the finite-index norm estimate, inertia congruence chain, geometric-sum contraction, and the partial-trace bound `ρⁿ` feeding Tate-character finiteness. |
+| [V3.18 — Prime-power norm and congruence chain closure](docs/V3.18_Prime_Power_Norm_and_Congruence_Chain_Closure.md) | Proves the exact norm of `u^(ℓ^n)−1`, PadicInt exact-level adjustment, finite-index kernel chain, and the coset recursion required for partial traces. |
 
 ## Source snapshot
 
@@ -50,7 +51,7 @@ The finite arithmetic certificate checks only its stated finite examples. These 
 
 ## Current research direction
 
-The latest completed audit is V3.17, which derives the inertia congruence chain, finite-index norm bound, geometric-sum contraction, and partial-trace decay `ρⁿ`. The next target is the remaining prime-power norm lemma, exact-level congruence hypotheses, and a consolidated proof of Tate-character finiteness and Bcris Regular. See [V3.17](docs/V3.17_Inertia_Partial_Trace_and_Geometric_Contraction.md#9-下一轮v318).
+The latest completed audit is V3.18, which closes the prime-power norm formula, exact-level adjustment, finite-index kernel chain, and coset recursion. The next target is a single theorem-by-theorem reconstruction of TateCharacterFiniteOnInertia and its use in Bcris Regular. See [V3.18](docs/V3.18_Prime_Power_Norm_and_Congruence_Chain_Closure.md#7-下一轮v319).
 
 ## License
 
