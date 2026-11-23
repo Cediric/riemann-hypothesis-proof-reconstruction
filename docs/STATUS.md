@@ -109,3 +109,34 @@ Next: audit K4/K5 input packages (`Nf`, `SrcUr`, `AdmWn`, `AdmTop2)), the SP4 im
 3. Trace `gmEx`, `explSmul`, `avgEq`, `avgMF`, `rhsEq`, `smSys), and `chiFix) to their theorem bodies.
 4. For each input, distinguish proved construction, imported mathematical result, explicit hypothesis, and any unverified bridge.
 5. Continue the independent axiom/dependency audit when a Lean/Lake environment is available; do not infer build success from source browsing.
+
+
+## V3.5 update — 2026-11-23
+
+- Expanded `ordinaryEisensteinEigenfunctional_exists` to its exact `CuspidalUnitaryTwistsClaim` output: level raising, primitive character, Hecke eigenfunctional, `MeasMu`, and nondegenerate smoothing parameters.
+- Traced `TowerEx` to the construction of a standard modular-function tower using the modular-function fraction field, (j)-invariant, analytic germs, Shimura reciprocity, bounded denominators, and saturation.
+- Expanded `Meas3`: bounded distributions produce an integral-coefficient (l)-adic power series, with primitive-root Gauss-sum congruences and a nonvanishing mass bound.
+- Traced `JEx` to a valuation-preserving embedding and `CoefUb` to coefficient-ring upper bounds plus finite-set integrality.
+- Verified `Mono` transfers `Sys`, `IwSys2), and `HTLawCsOfCoef) under coefficient-ring inclusion.
+- Added `docs/V3.5_Glue2_Foundational_Inputs_Eisenstein_Towers_and_Measure.md`.
+
+## V3.6 update — 2026-11-23
+
+- `PsiEx` factors Galois characters through the mod-(l) cyclotomic quotient using `KillsMu` and surjectivity of `cyc1`.
+- `FrobU` derives existence of a Frobenius element and unit norm of the ordinary diagonal entry from the integral upper-triangular form.
+- `DetIne` uses newform characteristic polynomials and Chebotarev degree-one density to obtain the inertia determinant relation.
+- `HatW` uses finite Fourier transform invertibility, non-Archimedean norm bounds, and periodicity.
+- `SmNz` is reduced to an explicit factorization of the four smoothing terms.
+- `GmEx` is an explicit lower-triangular (SL_2(mathbb Z)) matrix construction.
+- `ExplSmul` preserves congruence conditions under multiplication by (l^m).
+- `PinOf` combines `Meas3`, `CoefUb`, `Mono), and `Expl` to construct the `Pin7) package.
+- Added `docs/V3.6_Glue2_Representation_Local_Inputs_and_Pin7.md`.
+- Updated the README index.
+
+## Next steps after V3.6
+
+1. Audit `AvgEq), `AvgMF), `RhsEq), `SmSys), and `ChiFix) by reading both their proposition definitions and proof bodies.
+2. Read `glue2` line by line and map each input to the exact field/lemma it discharges.
+3. Verify the final construction of `ExistsZetaEulerSystemIwasawaData Pin7) and identify every nonzero scalar, coefficient-ring enlargement, and smoothing parameter.
+4. Recheck whether any `glue2` inputs are only theorem wrappers to CompanionTheory or other imported modules; record the exact source and proof boundary.
+5. When Lean/Lake is available, run the target build and axiom/dependency checks; source browsing alone is not build verification.
