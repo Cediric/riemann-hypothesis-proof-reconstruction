@@ -1,8 +1,8 @@
 import Development.AbelianVarietyTheory.Proofs.InertiaEigenvalues.FontaineBcrisBasicTheoremsProof
 
 /-!
-Run this file from the pinned upstream Lean project after its dependencies are available.
-Suggested command in the upstream project:
+Copy this file into the root of the pinned upstream Lean project after its dependencies are available.
+Run the following command from that upstream project root:
   lake env lean Check_FontaineBcris_Axioms.lean
 
 This is a diagnostic script. It does not replace lake build Main or an independent
