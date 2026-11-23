@@ -34,6 +34,8 @@ A source-audited, human-readable reconstruction of the public Lean development a
 | [V3.17 — Inertia partial trace and geometric contraction](docs/V3.17_Inertia_Partial_Trace_and_Geometric_Contraction.md) | Derives the finite-index norm estimate, inertia congruence chain, geometric-sum contraction, and the partial-trace bound `ρⁿ` feeding Tate-character finiteness. |
 | [V3.18 — Prime-power norm and congruence chain closure](docs/V3.18_Prime_Power_Norm_and_Congruence_Chain_Closure.md) | Proves the exact norm of `u^(ℓ^n)−1`, PadicInt exact-level adjustment, finite-index kernel chain, and the coset recursion required for partial traces. |
 | [V3.19 — Tate inertia finiteness and Bcris Regular](docs/V3.19_TateCharacterFinite_and_BcrisRegular_Complete.md) | Consolidates the full `TateCharacterFiniteOnInertia` proof and its use in `BcrisRegular`, including the unramified Ainf period and the theta-zero branch. |
+| [V3.20 — FontaineBcris seven-field dependency audit](docs/V3.20_FontaineBcris_SevenField_Dependency_Audit.md) | Audits the seven fields, reduces the final construction to four core inputs, traces Core/Fits, and expands TensorInj, Fund, FundOnto, 1−φ surjectivity, and Regular. |
+| [V3.20 axiom-check script](checks/Check_FontaineBcris_Axioms.lean) | Prepared `#print axioms` checks for the assembled FontaineBcris theorem and its main inputs; intended to run in the pinned upstream Lean project. |
 
 ## Source snapshot
 
@@ -46,13 +48,13 @@ Do not silently replace these source links with `main`: the fixed snapshot is pa
 
 ## Verification
 
-The V2.7 Python certificate was executed successfully with Python. The upstream README reports a static scan with no `sorry`, `admit`, or custom axiom declarations, but also states that no independent build/review had been published at mirroring time. This reconstruction has not independently run `lake build Main`, `#print axioms`, or `lean4checker`; the current execution environment has no Lean/Lake installation. See the [V3.0 reproducibility boundary](docs/V3.0_TLiftK_to_RH_TopLevel_Chain.md#6-公开仓库的可复核性边界).
+The V2.7 Python certificate was executed successfully with Python. The upstream README reports a static scan with no `sorry`, `admit`, or custom axiom declarations, but this is not a substitute for a build or theorem-level axiom audit. V3.20 adds `checks/Check_FontaineBcris_Axioms.lean` as a prepared diagnostic script. It has **not** been executed in this reconstruction workspace. No new `lake build Statements`, `lake build Main`, `#print axioms`, or `lean4checker` result is claimed. See the [V3.0 reproducibility boundary](docs/V3.0_TLiftK_to_RH_TopLevel_Chain.md#6-公开仓库的可复核性边界).
 
 The finite arithmetic certificate checks only its stated finite examples. These are diagnostic checks, **not** a proof of the general automorphic or arithmetic Theta/Rallis hypotheses. No new Lean compilation is claimed in this repository.
 
 ## Current research direction
 
-The latest completed audit is V3.19, which consolidates the complete `TateCharacterFiniteOnInertia` proof and both branches of `BcrisRegular`. The next target is a seven-field dependency audit of `FontaineBcris`, including the theorem/axiom status of `TensorInj`, `FundOnto`, `Fund`, `1−φ` surjectivity, and `Regular`. See [V3.19](docs/V3.19_TateCharacterFinite_and_BcrisRegular_Complete.md#14-下一轮v320).
+The latest completed source-level audit is V3.20, which reconstructs all seven `FontaineBcris` fields, identifies the four inputs required by `FontaineBcris.of_rest`, and traces the Core/Fits construction. It also records that `regular_of_tensorInj` does not use its TensorInj argument. The next target is V3.21: execute the pinned Lean build, run the prepared `#print axioms` script, record the exact environment and outputs, and attempt independent kernel replay. These execution checks remain pending. See [V3.20](docs/V3.20_FontaineBcris_SevenField_Dependency_Audit.md#7-下一轮-v321执行级验证).
 
 ## License
 
