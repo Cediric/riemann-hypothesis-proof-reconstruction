@@ -8,9 +8,16 @@ A source-audited, human-readable reconstruction of the public Lean development a
 
 | Document | Contents |
 |---|---|
-| [V2.7 — Full reconstruction and audit draft](docs/RH_Lean_Natural_Language_Reconstruction_V2.7.md) | The working manuscript through the Theta orbit-mass, denominator, weighted-kernel, and Rallis boundary audit. This is a searchable-text Markdown export; some layout-dependent equation objects may need cross-checking against the fixed Lean sources. |
-| [V2.8 — Rallis, Schur averaging, and Theta-lift nonvanishing](docs/V2.8_Rallis_Schur_ThetaLift_Nonvanishing.md) | A source-level reconstruction of the exact `Rallis_k`, `SchurStep_k`, `AbsNe`, and `NonVan_k` chain. |
+| [V2.7 — Full reconstruction and audit draft](docs/RH_Lean_Natural_Language_Reconstruction_V2.7.md) | Working manuscript through Theta orbit mass, denominator, weighted-kernel, and Rallis boundary audits. This is a searchable-text Markdown export; some layout-dependent equation objects may need cross-checking against the fixed Lean sources. |
 | [V2.7 exact arithmetic certificate](checks/theta_mass_and_adjoint_exact_certificate_v27.py) | Finite exact-arithmetic diagnostics for orbit mass, lcm denominators, weighted adjoints/composition, a Hilbert–Schmidt inequality, and an adjoint-invariance counterexample. |
+| [V2.8 — Rallis, Schur averaging, and Theta-lift nonvanishing](docs/V2.8_Rallis_Schur_ThetaLift_Nonvanishing.md) | Source-level reconstruction of the exact `Rallis_k`, `SchurStep_k`, `AbsNe`, and `NonVan_k` chain. |
+| [V2.9 — Tools_k construction audit](docs/V2.9_Tools_Package_Construction_Audit.md) | Tracks the 14 fields of `Tools_k` to their concrete Lean constructions. |
+| [V3.0 — TLiftK to RH top-level chain](docs/V3.0_TLiftK_to_RH_TopLevel_Chain.md) | Traces the route from theta-lift existence through Galois representations and EveryCharacter to RH. |
+| [V3.0 supplement — Siegel–Weil and Poisson/CT splitting](docs/V3.0_SiegelWeil_to_Riemann_Hypothesis_Audit.md) | Expands the standard Siegel–Weil formula, Poisson summation, constant-term splitting, and the meaning of `MainC_k 2`. |
+| [V3.1 — Sha windows, Chebyshev bounds, and zero-free regions](docs/V3.1_Sha_Windows_Chebyshev_and_ZeroFree.md) | Expands the `VWin` quantity and its route to zero-free bounds. |
+| [V3.2 — Counts and Galois cohomology lengths](docs/V3.2_Counts_and_Galois_Cohomology_Lengths.md) | Separates global Sha, H², and local length quantities and traces the CountI/II/III/IV/V/Vs/Z branches. |
+| [V3.3 — Kato Euler systems, LemmaK, and window constants](docs/V3.3_Kato_Euler_Systems_LemmaK_and_Window_Constants.md) | Expands the Kato/Euler-system route, finite H² bounds, SP4 image density, and window constants. |
+| [V3.4 — K4/K5 inputs, Hecke projection, and ZetaUr](docs/V3.4_K4_K5_Inputs_Hecke_Projection_and_ZetaUr.md) | Audits `Nf`, `SrcUr`, `AdmWn`, the construction of `AdmTop2`, K4/K5, and the acyclic route through `ZetaUr` to `VWin`. |
 
 ## Source snapshot
 
@@ -23,20 +30,13 @@ Do not silently replace these source links with `main`: the fixed snapshot is pa
 
 ## Verification
 
-The V2.7 Python certificate was executed successfully with Python. The upstream README reports a static scan with no \`sorry\`, \`admit\`, or custom axiom declarations, but also states that no independent build/review had been published at mirroring time. This reconstruction has not independently run \`lake build Main\`, \`#print axioms\`, or \`lean4checker\`; the current execution environment has no Lean/Lake installation. See [V3.0 verification boundary](docs/V3.0_TLiftK_to_RH_TopLevel_Chain.md#6-公开仓库的可复核性边界). It reports:
+The V2.7 Python certificate was executed successfully with Python. The upstream README reports a static scan with no `sorry`, `admit`, or custom axiom declarations, but also states that no independent build/review had been published at mirroring time. This reconstruction has not independently run `lake build Main`, `#print axioms`, or `lean4checker`; the current execution environment has no Lean/Lake installation. See the [V3.0 reproducibility boundary](docs/V3.0_TLiftK_to_RH_TopLevel_Chain.md#6-公开仓库的可复核性边界).
 
-- (S_3) orbit sizes (3,2,1) and stabilizer orders (2,3,6);
-- orbit mass identity (3/6+2/6+1/6=1/2+1/3+1/6=1);
-- minimal universal denominator (operatorname{lcm}(2,3,6)=6), versus product (36);
-- two-layer denominator (1080) for the test instance;
-- exact symbolic pass for weighted adjoint, kernel composition, and the stated Hilbert–Schmidt inequality;
-- exact pass for the finite-dimensional counterexample showing that a subspace inner-product identity does not imply global adjoint invariance.
-
-These are finite diagnostic checks, **not** a proof of the general automorphic or arithmetic Theta/Rallis hypotheses. The V2.8 note is a source reconstruction; no new Lean compilation is claimed in this repository.
+The finite arithmetic certificate checks only its stated finite examples. These are diagnostic checks, **not** a proof of the general automorphic or arithmetic Theta/Rallis hypotheses. No new Lean compilation is claimed in this repository.
 
 ## Current research direction
 
-The next audit target is the upstream construction of the `Tools_k` package—especially the actual derivation of `swFull`, `boxSec`, `dbl`, `basic`, and `cpt`—and how those inputs are assembled into `TLift_k`. See the [V2.9 Tools_k dependency audit](docs/V2.9_Tools_Package_Construction_Audit.md#5-当前审计等级与下一步).
+The latest audit target is the long auxiliary input list passed to `glue2` in the Kato global-unit-law construction: `ordinaryEisensteinEigenfunctional_exists`, `meas3`, `jEx`, `coefUb`, `mono`, `psiEx`, `frobU`, `detIne`, `hatW`, `pinOf`, `smNz`, `gmEx`, `explSmul`, `avgEq`, `avgMF`, `rhsEq`, `smSys`, and `chiFix`. The next pass will classify each input by its actual theorem source, proof body, and any remaining assumptions. See the [V3.4 audit](docs/V3.4_K4_K5_Inputs_Hecke_Projection_and_ZetaUr.md#12-本轮审计结论).
 
 ## License
 
