@@ -36,6 +36,7 @@ A source-audited, human-readable reconstruction of the public Lean development a
 | [V3.19 — Tate inertia finiteness and Bcris Regular](docs/V3.19_TateCharacterFinite_and_BcrisRegular_Complete.md) | Consolidates the full `TateCharacterFiniteOnInertia` proof and its use in `BcrisRegular`, including the unramified Ainf period and the theta-zero branch. |
 | [V3.20 — FontaineBcris seven-field dependency audit](docs/V3.20_FontaineBcris_SevenField_Dependency_Audit.md) | Audits the seven fields, reduces the final construction to four core inputs, traces Core/Fits, and expands TensorInj, Fund, FundOnto, 1−φ surjectivity, and Regular. |
 | [V3.20 axiom-check script](checks/Check_FontaineBcris_Axioms.lean) | Prepared `#print axioms` checks for the assembled FontaineBcris theorem and its main inputs; intended to run in the pinned upstream Lean project. |
+| [V3.21 main-theorem axiom-check script](checks/Check_Main_Axioms.lean) | Prepared `#print axioms` checks for the five public RH/GRH conclusions and the `EveryCharacter` bridge. |
 
 ## Source snapshot
 
@@ -48,13 +49,13 @@ Do not silently replace these source links with `main`: the fixed snapshot is pa
 
 ## Verification
 
-The V2.7 Python certificate was executed successfully with Python. The upstream README reports a static scan with no `sorry`, `admit`, or custom axiom declarations, but this is not a substitute for a build or theorem-level axiom audit. V3.20 adds `checks/Check_FontaineBcris_Axioms.lean` as a prepared diagnostic script. It has **not** been executed in this reconstruction workspace. No new `lake build Statements`, `lake build Main`, `#print axioms`, or `lean4checker` result is claimed. See the [V3.0 reproducibility boundary](docs/V3.0_TLiftK_to_RH_TopLevel_Chain.md#6-公开仓库的可复核性边界).
+The V2.7 Python certificate was executed successfully with Python. The upstream README reports a static scan with no `sorry`, `admit`, or custom axiom declarations, but this is not a substitute for a build or theorem-level axiom audit. V3.20/V3.21 add separate diagnostic scripts for the FontaineBcris dependency chain and the five top-level RH/GRH theorems. Neither script has yet been executed. This workspace has no Lean/Lake installation and cannot reach GitHub from its shell, so local compilation is unavailable; a read-only GitHub Actions workflow is being prepared to attempt the pinned build remotely. No successful `lake build`, `#print axioms`, or `lean4checker` result is claimed. See the [V3.0 reproducibility boundary](docs/V3.0_TLiftK_to_RH_TopLevel_Chain.md#6-公开仓库的可复核性边界).
 
 The finite arithmetic certificate checks only its stated finite examples. These are diagnostic checks, **not** a proof of the general automorphic or arithmetic Theta/Rallis hypotheses. No new Lean compilation is claimed in this repository.
 
 ## Current research direction
 
-The latest completed source-level audit is V3.20, which reconstructs all seven `FontaineBcris` fields, identifies the four inputs required by `FontaineBcris.of_rest`, and traces the Core/Fits construction. It also records that `regular_of_tensorInj` does not use its TensorInj argument. The pinned execution baseline is Lean 4.33.1 with Mathlib commit `0df444a360eaa60ab8c11dca51a86af692955474`; the upstream Lake package is `tree` with `srcDir = "src"`. The next target is V3.21: run `lake exe cache get`, `lake build Statements`, and `lake build Main`; run the prepared `#print axioms` script; record the exact environment and outputs; and attempt independent kernel replay. These execution checks remain pending. See [V3.20](docs/V3.20_FontaineBcris_SevenField_Dependency_Audit.md#7-下一轮-v321执行级验证).
+The latest completed source-level audit is V3.20, which reconstructs all seven `FontaineBcris` fields, identifies the four inputs required by `FontaineBcris.of_rest`, and traces the Core/Fits construction. The audit also expanded the `PhiInj` and `IotaInj` proofs and confirmed that `regular_of_tensorInj` does not use its TensorInj argument. The pinned execution baseline is Lean 4.33.1 with Mathlib commit `0df444a360eaa60ab8c11dca51a86af692955474`; the upstream Lake package is `tree` with `srcDir = "src"`. V3.21 now has separate axiom-audit scripts for FontaineBcris and the five RH/GRH conclusions. The next step is to run `lake exe cache get`, `lake build Statements`, `lake build Main`, both scripts, and then independent kernel replay; all execution checks remain pending.
 
 ## License
 
