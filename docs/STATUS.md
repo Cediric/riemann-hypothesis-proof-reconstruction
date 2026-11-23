@@ -140,3 +140,21 @@ Next: audit K4/K5 input packages (`Nf`, `SrcUr`, `AdmWn`, `AdmTop2)), the SP4 im
 3. Verify the final construction of `ExistsZetaEulerSystemIwasawaData Pin7) and identify every nonzero scalar, coefficient-ring enlargement, and smoothing parameter.
 4. Recheck whether any `glue2` inputs are only theorem wrappers to CompanionTheory or other imported modules; record the exact source and proof boundary.
 5. When Lean/Lake is available, run the target build and axiom/dependency checks; source browsing alone is not build verification.
+
+
+## V3.5 supplementary deep dive — 2026-11-23
+
+- Revisited the ordinaryEisensteinEigenfunctional_exists input already summarized in the V3.5 Glue2 audit.
+- Corrected the proof-boundary classification: the Statement file is a thin wrapper, but chapterM_holds is proved in the same upstream repository in OrdinaryEisensteinEigenfunctionalExists.lean; it is not an external CompanionTheory black box.
+- Expanded depleted_newform_prim: level raising, coefficient depletion, change-level character, and preservation of Hecke relations away from the enlarged level.
+- Expanded unitRoot_split: a quadratic-root argument using the non-Archimedean norm to select a unit-root eigenvalue.
+- Traced eigF_of_prim to a Petersson functional represented by finitely many q-expansion coefficients via a Sturm bound; Hecke T/U adjointness supplies the eigenrelations.
+- Traced the nonzero functional value to Rankin unfolding, two twisted L-values, and a nonzero Gamma-factor limit.
+- Expanded Atkin–Lehner extension from EigF to EigAll, including the finite-dimensional functional extension and Hecke intertwining.
+- Traced val_depleted_ne_zero through Eisenstein products, Atkin–Lehner transforms, U-operator eigenrelations, and the nonzero Petersson value.
+- Expanded MeasMu into level compatibility, non-Archimedean boundedness, finite coefficient field, and interpolation.
+- Expanded twisted_lvalue_ne_zero_edge: Rankin mean-square bounds, entire continuation, global Euler positivity, and reciprocal-prime divergence from APLogDensity.
+- The inspected analytic route proves nonvanishing only in the specified right-edge region and does not invoke EveryCharacter or the final RH theorem; no circular dependency was found along this path.
+- Added docs/V3.5_Ordinary_Eisenstein_Eigenfunctional_Construction.md as a supplement to the broader V3.5 Glue2 input audit.
+
+This supplement does not change the next-step priority after V3.6: audit AvgEq, AvgMF, RhsEq, SmSys, and ChiFix, then inspect glue2 line by line.
