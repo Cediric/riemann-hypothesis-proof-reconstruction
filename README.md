@@ -23,7 +23,7 @@ Do not silently replace these source links with `main`: the fixed snapshot is pa
 
 ## Verification
 
-The V2.7 Python certificate was executed successfully with Python. It reports:
+The V2.7 Python certificate was executed successfully with Python. The upstream README reports a static scan with no \`sorry\`, \`admit\`, or custom axiom declarations, but also states that no independent build/review had been published at mirroring time. This reconstruction has not independently run \`lake build Main\`, \`#print axioms\`, or \`lean4checker\`; the current execution environment has no Lean/Lake installation. See [V3.0 verification boundary](docs/V3.0_TLiftK_to_RH_TopLevel_Chain.md#6-公开仓库的可复核性边界). It reports:
 
 - (S_3) orbit sizes (3,2,1) and stabilizer orders (2,3,6);
 - orbit mass identity (3/6+2/6+1/6=1/2+1/3+1/6=1);
