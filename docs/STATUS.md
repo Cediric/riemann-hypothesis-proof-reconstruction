@@ -79,3 +79,33 @@ Next: inspect the exact theorem inputs behind `KatoTwoW), `sp4Main_alt), `ThmS6_
 - Added `docs/V3.3_Kato_Euler_Systems_LemmaK_and_Window_Constants.md`.
 
 Next: audit K4/K5 input packages (`Nf`, `SrcUr`, `AdmWn`, `AdmTop2)), the SP4 image/rigidity hypotheses, and CountV's Euler-characteristic inputs.
+
+
+## V3.0 supplementary update — 2026-11-23
+
+- Added a separate source-level supplement for the standard Siegel–Weil formula.
+- Traced `Poisson_k` to adelic Fourier/Theta summation and reversible coordinate changes.
+- Traced `CTSplit_k` to fundamental-domain independence, compact domains, absolute convergence, first-orbit identification, and the second-orbit dilation law.
+- Clarified that `mainInequality_by_corank` proves the Siegel–Weil central-value identity `MainC_k 2`; it should not be conflated with a separate arithmetic inequality for Dirichlet (L)-functions.
+- Added `docs/V3.0_SiegelWeil_to_Riemann_Hypothesis_Audit.md`.
+
+## V3.4 update — 2026-11-23
+
+- Expanded the definitions of `Nf`, `SrcUr`, and `AdmWn`.
+- Traced `SrcL → Nf + SrcUr` through spherical input, newform twisting, finite coefficient fields, and integral upper-triangular conjugation.
+- Confirmed that `AdmTop2` has a concrete construction theorem: `exists_admissible_hecke_projection_nonvanishing`. Its proof builds a Galois/Hecke-compatible projection, then uses finite freeness, a basis, (l)-power rescaling, and coefficient-ring enlargement to obtain integrality.
+- Expanded K4's construction of `IsZWc`, `Sys`, `IwSys2`, and `SpLink`.
+- Corrected the K5 proof description: `K5.top` is built by `law_of_inputs hco exists_pres_smoothed`; it is not the separate `GlobalTheory.K5.TopGeo.top` theorem.
+- Traced K5's coefficient Hodge–Tate law and smoothed polynomial presentation into `HTLawCsOfCoef`.
+- Traced `C7.pLocu` to the local-units argument and the power-series nonvanishing-transfer theorem.
+- Confirmed the dependency direction `K4/K5/C7 → ZetaUr → VanishOrdL → KatoTwoS → KatoTwoW → VWin`; no cycle was found in the inspected module/call graph.
+- Added `docs/V3.4_K4_K5_Inputs_Hecke_Projection_and_ZetaUr.md`.
+- Updated the README index.
+
+## Next steps after V3.4
+
+1. Audit every auxiliary input passed to `glue2`, beginning with `ordinaryEisensteinEigenfunctional_exists`, `meas3`, `jEx`, `coefUb), and `mono`.
+2. Continue through `psiEx`, `frobU`, `detIne`, `hatW`, `pinOf), and `smNz).
+3. Trace `gmEx`, `explSmul`, `avgEq`, `avgMF`, `rhsEq`, `smSys), and `chiFix) to their theorem bodies.
+4. For each input, distinguish proved construction, imported mathematical result, explicit hypothesis, and any unverified bridge.
+5. Continue the independent axiom/dependency audit when a Lean/Lake environment is available; do not infer build success from source browsing.
