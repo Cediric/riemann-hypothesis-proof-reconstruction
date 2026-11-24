@@ -61,7 +61,6 @@ jobs:
             echo "Audit commit: $(git -C ../audit rev-parse HEAD)"
             lean --version
             lake --version
-            command -v leanexport
             command -v leanchecker
             echo "CPU cores: $(nproc)"
             free -h
@@ -82,30 +81,12 @@ jobs:
           set -euo pipefail
           lake build Supplements.Kernels.MainTheorems 2>&1 | tee ../reports/main-theorems-build.log
 
-      - name: Export RH theorem dependency closure
+      - name: Replay RH theorem module in a fresh Lean kernel environment
         working-directory: upstream
         shell: bash
         run: |
           set -euo pipefail
-          lake env leanexport Supplements.Kernels.MainTheorems -- \
-            allChi rhOfAll critAll claimAll \
-            UpperTheory.FinalTheorems.everyCharacter_of_row \
-            UpperTheory.FinalTheorems.everyCharacter \
-            UpperTheory.FinalTheorems.riemannHypothesis \
-            UpperTheory.Gal.Int.galoisLocalGlobalStrong_recParameter \
-            UpperTheory.TP.K.tLiftK \
-            UpperTheory.One.vwin_of_row \
-            Formalism.VW.rh_of_every \
-            Formalism.VW.critLine \
-            > ../rh-theorems-export.ndjson
-          wc -l ../rh-theorems-export.ndjson | tee ../reports/export-summary.txt
-
-      - name: Replay exported declarations in a fresh kernel environment
-        working-directory: upstream
-        shell: bash
-        run: |
-          set -euo pipefail
-          lake env leanchecker --from-export ../rh-theorems-export.ndjson 2>&1 | tee ../reports/leanchecker-fresh-main-theorems.log
+          lake env leanchecker --fresh Supplements.Kernels.MainTheorems 2>&1 | tee ../reports/leanchecker-fresh-main-theorems.log
 
       - name: Upload replay logs
         if: always()
