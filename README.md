@@ -63,6 +63,7 @@ A source-audited, human-readable reconstruction of the public Lean development a
 | [V3.44 — Trace rank and limit Galois representations](docs/V3.44_Trace_Rank_Galois_Representation_Compressed.md) | Alternative proof of exists_limit_rep: trace-pairing rank ≤ d², Newton identities, semisimple quotient, integer multiplicities, and continuity in finitely many trace coordinates. |
 | [V3.45 — Local compatibility and period closure](docs/V3.45_Local_Compatibility_Trace_and_Period_Closure.md) | Condenses inertia inheritance, Newton recovery of Frobenius eigenvalues, and simultaneous local/global approximation; reconstructs the ClosedAtL lattice-cover and period-frame architecture. |
 | [V3.46 — Dimension-free lattice-tower trace transfer](docs/V3.46_Lattice_Tower_Trace_Transfer_Compressed.md) | Compresses the trace-power transfer into telescoping, ultrametric maximum norms, and a cross-product normalization identity; sharpens the error bound independently of layer dimension. |
+| [V3.47 — Breuil–Kisin frame height and closure](docs/V3.47_Breuil_Kisin_Frame_Height_and_Closure.md) | Condenses height adjustment, Witt-vector saturation, integral cocycle/crystalline descent, and de Rham compactness; isolates the linked preframe construction. |
 | [V3.20 supplement — TLiftK theta-lift construction](docs/V3.20_Supplement_TLiftK_ThetaLift_Construction.md) | Expands TLiftK into its 14-field Tools_k package and traces the nonvanishing/theta-lift/projection proof skeleton feeding the Galois row. |
 | [V3.20 supplement — VWin descent input](docs/V3.20_Supplement_VWin_Descent_Input.md) | Traces the exact SR.descWeak theorem used by VWin, the RunTh trace-formula dichotomy, and split-rigidity elimination of the obstruction branch. |
 | [V3.20 axiom-check script](checks/Check_FontaineBcris_Axioms.lean) | Prepared `#print axioms` checks for the assembled FontaineBcris theorem and its main inputs; intended to run in the pinned upstream Lean project. |
@@ -90,6 +91,8 @@ The main remaining human-exposition bottleneck is the arithmetic inequality (M).
 
 The finite arithmetic certificate checks only its stated finite examples. These are diagnostic checks, **not** a proof of the general automorphic or arithmetic Theta/Rallis hypotheses.
 ## Current research direction
+
+V3.47 compresses the Breuil–Kisin closure step once linked preframes are supplied, using quotient-matrix descent, Witt-vector saturation and fixed-size compactness. The linked preframe construction, especially Mittag-Leffler images and saturated lattice freeness, is the next target on this branch.
 
 V3.46 gives a direct alternative proof of lattice-cover trace-power transfer. Its dimension-free bound handles varying layer ranks and unbounded individual trace weights. The next deep input is the bounded Breuil–Kisin frame and limit-frame construction.
 
