@@ -71,6 +71,7 @@ A source-audited, human-readable reconstruction of the public Lean development a
 | [V3.52 — Isogenous lattice and invariant Frobenius descent](docs/V3.52_Isogenous_Lattice_and_Invariant_Frobenius_Descent.md) | Lattice intersection, saturated determinant criterion, normalized residue kernel projector, and inhomogeneous Witt digit lifting. |
 | [V3.53 — Adic basis and exact graded strictness](docs/V3.53_Adic_Basis_Exact_Graded_Strictness.md) | Uses the polynomial associated graded ring of a regular pair to improve strictness from 2n to n and obtain the topological basis via compatible quotient isomorphisms. |
 | [V3.54 — Two-copy descent and Frobenius amplification](docs/V3.54_Two_Copy_Descent_and_Frobenius_Amplification.md) | Exact geometric exponent, sharper sufficient growth threshold, quotient localization and tensor retraction descent. |
+| [V3.55 — Valuation growth and perfect completion](docs/V3.55_Valuation_Growth_and_Perfect_Completion.md) | Replaces divisibility induction by finite-module integrality, proves valuation completion and perfectness by inverse limits, closes the valuation point growth input. |
 | [V3.20 supplement — TLiftK theta-lift construction](docs/V3.20_Supplement_TLiftK_ThetaLift_Construction.md) | Expands TLiftK into its 14-field Tools_k package and traces the nonvanishing/theta-lift/projection proof skeleton feeding the Galois row. |
 | [V3.20 supplement — VWin descent input](docs/V3.20_Supplement_VWin_Descent_Input.md) | Traces the exact SR.descWeak theorem used by VWin, the RunTh trace-formula dichotomy, and split-rigidity elimination of the obstruction branch. |
 | [V3.20 axiom-check script](checks/Check_FontaineBcris_Axioms.lean) | Prepared `#print axioms` checks for the assembled FontaineBcris theorem and its main inputs; intended to run in the pinned upstream Lean project. |
@@ -98,6 +99,8 @@ The main remaining human-exposition bottleneck is the arithmetic inequality (M).
 
 The finite arithmetic certificate checks only its stated finite examples. These are diagnostic checks, **not** a proof of the general automorphic or arithmetic Theta/Rallis hypotheses.
 ## Current research direction
+
+V3.55 reconstructs the valuation point growth theorem and terminal geometric rigidity. The four untilt/Galois comparison inputs remain.
 
 V3.54 reconstructs tensor descent and exact Frobenius amplification; the perfect valuation point growth theorem and geometric Galois comparison remain.
 
