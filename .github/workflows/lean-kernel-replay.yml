@@ -66,19 +66,19 @@ jobs:
           set -euo pipefail
           lake exe cache get 2>&1 | tee ../reports/cache.log
 
-      - name: Build complete RH/GRH theorem target
+      - name: Build RH/GRH theorem module
         working-directory: upstream
         shell: bash
         run: |
           set -euo pipefail
-          lake build Main 2>&1 | tee ../reports/main-build.log
+          lake build Supplements.Kernels.MainTheorems 2>&1 | tee ../reports/main-theorems-build.log
 
-      - name: Replay all imported and local constants in a fresh Lean environment
+      - name: Replay RH theorem module constants in a fresh Lean environment
         working-directory: upstream
         shell: bash
         run: |
           set -euo pipefail
-          lake env leanchecker --fresh Main 2>&1 | tee ../reports/leanchecker-fresh-main.log
+          lake env leanchecker --fresh Supplements.Kernels.MainTheorems 2>&1 | tee ../reports/leanchecker-fresh-main-theorems.log
 
       - name: Upload replay logs
         if: always()
