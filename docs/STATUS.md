@@ -1,4 +1,6 @@
-# Research status — 2026-11-23
+# Research status — 2026-11-24
+
+> Historical chronological notes below are retained. For the consolidated current record, see [V3.23](V3.23_Repository_Synchronization_and_Verification_Status.md).
 
 ## Published
 
@@ -199,3 +201,16 @@ This supplement does not change the next-step priority after V3.6: audit AvgEq, 
 2. Compare the hypotheses of `Ord2.es_vanish` against the actual `ZetaUr` output, especially Euler-system norm relations, local conditions, and nonzero classes.
 3. Continue auditing the helper modules used by `pCore` and the pinned CompanionTheory Newform API.
 4. When Lean/Lake is available, run the target build, axiom/dependency inspection, and kernel checker; source browsing is not a substitute for compilation.
+
+## V3.23 — Repository synchronization and current verification status (2026-11-24)
+
+- Correct project repository: `Cediric/riemann-hypothesis-proof-reconstruction`; the upstream Lean source repository `CocoSgt/riemann-hypothesis-lean` is a separate repository and remains pinned at `7cbf7a0c32fca1badf05931879a37c3f8a2b03b4`.
+- The README index records V3.20 FontaineBcris seven-field audit and its supplements (EveryCharacter-to-RH bridge, TLiftK construction, and VWin descent), V3.21 axiom-check scripts/execution report, and V3.22 exact VWin/input-package audit.
+- V3.22 records the conditional `WinPair` quantifier in `VWinAt`, the separate construction of admissible pairs and actual host fields, nonempty genuine `LData`, and the call-site audit showing the imported `SizeWindowBrackets` route is not used by the final `EveryCharacter` construction.
+- Pinned toolchain: Lean 4.33.1, Lake 5.0.0-src+819816b, Mathlib `0df444a360eaa60ab8c11dca51a86af692955474`.
+- At this snapshot, pinned audit run [45320185287](https://github.com/Cediric/riemann-hypothesis-proof-reconstruction/actions/runs/45320185287) and fresh replay runs [45320192303](https://github.com/Cediric/riemann-hypothesis-proof-reconstruction/actions/runs/45320192303) and [45320194757](https://github.com/Cediric/riemann-hypothesis-proof-reconstruction/actions/runs/45320194757) are in progress. The two replay jobs began before the workflow was narrowed and still target the older full-`Main` route; future replay runs target `Supplements.Kernels.MainTheorems`.
+- The first full-`Main` build passed `Statements` and reached `[15219/15228]`, but the available log has no terminal Lean error or successful exit status. It is not counted as a successful build.
+- No successful theorem-module build, completed/inspected theorem-level `#print axioms` result, or successful fresh `leanchecker --fresh` replay is claimed yet. The latest commit `2c88e4e924a8d64810a04304aae694241b0e732e` updates the replay workflow only; it adds no mathematical proof result.
+- Next: preserve the targeted CI artifacts, inspect the exact axiom output, complete the fresh replay, and continue independent mathematical review of the arithmetic/automorphic inputs.
+
+This V3.23 entry is a status/provenance synchronization, not a new mathematical proof result. The historical V3.8 next-step list above is retained as historical context and is superseded by the current actions recorded here.
