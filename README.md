@@ -59,6 +59,7 @@ A source-audited, human-readable reconstruction of the public Lean development a
 | [V3.41 — BumpAny and Datum](docs/V3.41_BumpAny_Datum_Local_to_Global.md) | Compresses the local Schrödinger/Weil bump construction and the global finite test-vector coefficient factorization used by NonVan_k. |
 | [V3.42 — Rallis, Schur, and adelic core](docs/V3.42_Rallis_Schur_Adelic_Core.md) | Compresses Rallis_k by holomorphic continuation, SchurStep_k by compact-group orthogonality, and Decomp_k by orthogonal idempotents in the adele algebra. |
 | [V3.43 — Rallis special-value continuation](docs/V3.43_Rallis_Special_Value_Continuation.md) | Details the height-dominated holomorphic integral, k-pair unfolding, identity-theorem continuation, and special-value theta-kernel formula behind Rallis_k. |
+| [V3.44 — Trace rank and limit Galois representations](docs/V3.44_Trace_Rank_Galois_Representation_Compressed.md) | Alternative proof of exists_limit_rep: trace-pairing rank ≤ d², Newton identities, semisimple quotient, integer multiplicities, and continuity in finitely many trace coordinates. |
 | [V3.20 supplement — TLiftK theta-lift construction](docs/V3.20_Supplement_TLiftK_ThetaLift_Construction.md) | Expands TLiftK into its 14-field Tools_k package and traces the nonvanishing/theta-lift/projection proof skeleton feeding the Galois row. |
 | [V3.20 supplement — VWin descent input](docs/V3.20_Supplement_VWin_Descent_Input.md) | Traces the exact SR.descWeak theorem used by VWin, the RunTh trace-formula dichotomy, and split-rigidity elimination of the obstruction branch. |
 | [V3.20 axiom-check script](checks/Check_FontaineBcris_Axioms.lean) | Prepared `#print axioms` checks for the assembled FontaineBcris theorem and its main inputs; intended to run in the pinned upstream Lean project. |
@@ -88,6 +89,8 @@ The finite arithmetic certificate checks only its stated finite examples. These 
 ## Current research direction
 
 V3.25 compressed split rigidity into three mathematical engines. V3.26 mapped the arithmetic main inequality (M) to ChainCore and isolated the central LinkDIV trace-to-main-term inequality. V3.27–V3.31 reconstructed the H9 slope bounds, Places_at, and the LinkG no-kernel family constructor. V3.32–V3.34 mapped H5 to CovolumeBoundThirdPlaceSeries and compressed the generic covolume assembly. V3.35–V3.36 traced H12 through the windowed family construction to VWinAt and the recursion/object branch. V3.37 traced the closed RH theorem through Row0b, GeoOne, and TLiftK. V3.38 reduced TLiftK to Tools_k and HgtEx_k. V3.39–V3.43 reconstructed NonVan_k: the Rallis integral contradiction, finite-place tail, local/global test vector, Schur orthogonality, adelic decomposition, and special-value analytic continuation.
+
+V3.44 continues the separate V3.38 trace-limit branch: it replaces the finite-dimensionality argument by a direct trace-rank bound and reconstructs the continuous semisimple limit Galois representation. The next step on this branch is the local-compatibility transfer via LinApprox.
 
 The theta-lift nonvanishing proof now has a compact mathematical architecture. The next highest-value audit is the full Siegel–Weil/Eisenstein construction feeding swFull and the double identity. H5's deep covolume inputs and the H9 local divisibility chain remain separate branches of the human-proof reconstruction.
 
