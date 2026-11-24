@@ -13,7 +13,7 @@ permissions:
 
 concurrency:
   group: lean-proof-audit-main
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   pinned-build-and-axioms:
