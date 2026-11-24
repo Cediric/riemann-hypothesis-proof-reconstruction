@@ -73,6 +73,7 @@ A source-audited, human-readable reconstruction of the public Lean development a
 | [V3.54 — Two-copy descent and Frobenius amplification](docs/V3.54_Two_Copy_Descent_and_Frobenius_Amplification.md) | Exact geometric exponent, sharper sufficient growth threshold, quotient localization and tensor retraction descent. |
 | [V3.55 — Valuation growth and perfect completion](docs/V3.55_Valuation_Growth_and_Perfect_Completion.md) | Replaces divisibility induction by finite-module integrality, proves valuation completion and perfectness by inverse limits, closes the valuation point growth input. |
 | [V3.56 — Distinguished quotient and Galois descent](docs/V3.56_Distinguished_Quotient_and_Galois_Descent.md) | Coordinate Witt completeness, colon-ideal regularity, quotient normal form, and the four untilt/Galois comparison inputs. |
+| [V3.58 — Period seed and Witt truncation](docs/V3.58_Period_Seed_and_Witt_Truncation.md) | Unifies seed norm bounds by ideal powers and replaces period saturation induction by finite Witt truncation. |
 | [V3.57 — Tilt completeness and exact adic cancellation](docs/V3.57_Tilt_Completeness_and_Exact_Adic_Cancellation.md) | Concrete tilt completeness, arbitrary nonunit Witt completeness, and sharp colon estimate n+1 instead of 2n+2. |
 | [V3.20 supplement — TLiftK theta-lift construction](docs/V3.20_Supplement_TLiftK_ThetaLift_Construction.md) | Expands TLiftK into its 14-field Tools_k package and traces the nonvanishing/theta-lift/projection proof skeleton feeding the Galois row. |
 | [V3.20 supplement — VWin descent input](docs/V3.20_Supplement_VWin_Descent_Input.md) | Traces the exact SR.descWeak theorem used by VWin, the RunTh trace-formula dichotomy, and split-rigidity elimination of the obstruction branch. |
@@ -101,6 +102,8 @@ The main remaining human-exposition bottleneck is the arithmetic inequality (M).
 
 The finite arithmetic certificate checks only its stated finite examples. These are diagnostic checks, **not** a proof of the general automorphic or arithmetic Theta/Rallis hypotheses.
 ## Current research direction
+
+V3.58 reconstructs seed norm bounds and period unit/saturation lemmas; actual period existence, comparison and ClosedPhi remain.
 
 V3.57 closes concrete tilt completeness and reconstructs AinfComplete.main and AinfDiv.main with exact adic cancellation. Period seeds and comparison remain.
 
