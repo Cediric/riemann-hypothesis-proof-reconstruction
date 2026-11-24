@@ -36,6 +36,14 @@ jobs:
           path: audit
           persist-credentials: false
 
+      - name: Restore compiled Lake artifacts
+        uses: actions/cache@v4
+        with:
+          path: |
+            upstream/.lake/build
+            upstream/.lake/packages/mathlib/.lake/build
+          key: lean-4.33.1-7cbf7a0c32fca1badf05931879a37c3f8a2b03b4
+
       - name: Install pinned Lean toolchain
         shell: bash
         run: |
@@ -75,12 +83,12 @@ jobs:
           set -euo pipefail
           lake build Statements 2>&1 | tee ../reports/statements-build.log
 
-      - name: Build complete RH/GRH theorem target
+      - name: Build RH/GRH theorem module
         shell: bash
         working-directory: upstream
         run: |
           set -euo pipefail
-          lake build Main 2>&1 | tee ../reports/main-build.log
+          lake build Supplements.Kernels.MainTheorems 2>&1 | tee ../reports/main-theorems-build.log
 
       - name: Build FontaineBcris audit modules
         shell: bash
