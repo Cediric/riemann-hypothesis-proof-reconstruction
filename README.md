@@ -69,6 +69,7 @@ A source-audited, human-readable reconstruction of the public Lean development a
 | [V3.50 — Étale basis gluing and Frobenius descent](docs/V3.50_Etale_Basis_Gluing_and_Frobenius_Descent.md) | Compresses étale gauge gluing, invariance, maximal-root Frobenius unit argument, uniform functional descent, and construction of the final preframe. |
 | [V3.51 — Finite-precision étale bases and bounded poles](docs/V3.51_Finite_Precision_Etale_and_Bounded_Poles.md) | Smith quotient invariants, flat kernel base change, Frobenius integrality, and a symmetric lower denominator for equivariant-map descent. |
 | [V3.52 — Isogenous lattice and invariant Frobenius descent](docs/V3.52_Isogenous_Lattice_and_Invariant_Frobenius_Descent.md) | Lattice intersection, saturated determinant criterion, normalized residue kernel projector, and inhomogeneous Witt digit lifting. |
+| [V3.53 — Adic basis and exact graded strictness](docs/V3.53_Adic_Basis_Exact_Graded_Strictness.md) | Uses the polynomial associated graded ring of a regular pair to improve strictness from 2n to n and obtain the topological basis via compatible quotient isomorphisms. |
 | [V3.20 supplement — TLiftK theta-lift construction](docs/V3.20_Supplement_TLiftK_ThetaLift_Construction.md) | Expands TLiftK into its 14-field Tools_k package and traces the nonvanishing/theta-lift/projection proof skeleton feeding the Galois row. |
 | [V3.20 supplement — VWin descent input](docs/V3.20_Supplement_VWin_Descent_Input.md) | Traces the exact SR.descWeak theorem used by VWin, the RunTh trace-formula dichotomy, and split-rigidity elimination of the obstruction branch. |
 | [V3.20 axiom-check script](checks/Check_FontaineBcris_Axioms.lean) | Prepared `#print axioms` checks for the assembled FontaineBcris theorem and its main inputs; intended to run in the pinned upstream Lean project. |
@@ -96,6 +97,8 @@ The main remaining human-exposition bottleneck is the arithmetic inequality (M).
 
 The finite arithmetic certificate checks only its stated finite examples. These are diagnostic checks, **not** a proof of the general automorphic or arithmetic Theta/Rallis hypotheses.
 ## Current research direction
+
+V3.53 reconstructs the topological coefficient basis using exact graded strictness, subject to the upstream adic completeness inputs. Next: tilt two-copy descent, Ainf completeness and period comparison.
 
 V3.52 compresses the isogenous lattice and invariant Frobenius descent. Next deep inputs: the tilt two-copy descent, its Galois comparison, Ainf topological basis and period seeds.
 
