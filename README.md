@@ -65,6 +65,7 @@ A source-audited, human-readable reconstruction of the public Lean development a
 | [V3.46 — Dimension-free lattice-tower trace transfer](docs/V3.46_Lattice_Tower_Trace_Transfer_Compressed.md) | Compresses the trace-power transfer into telescoping, ultrametric maximum norms, and a cross-product normalization identity; sharpens the error bound independently of layer dimension. |
 | [V3.47 — Breuil–Kisin frame height and closure](docs/V3.47_Breuil_Kisin_Frame_Height_and_Closure.md) | Condenses height adjustment, Witt-vector saturation, integral cocycle/crystalline descent, and de Rham compactness; isolates the linked preframe construction. |
 | [V3.48 — Mittag–Leffler and saturated lattice](docs/V3.48_Mittag_Leffler_and_Saturated_Lattice.md) | Alternative quotient-module stabilization, dimension-independent compatible lifting, PID residue-basis construction, and p-adic lifting of saturated free lattices. |
+| [V3.49 — Coefficient descent and Link right inverse](docs/V3.49_Coefficient_Descent_and_Link_Right_Inverse.md) | Compresses coefficient descent via an S-linear retraction, limit-vector integrality, both Link congruences, bounded inverse, and the uniform-denominator coefficient ideal. |
 | [V3.20 supplement — TLiftK theta-lift construction](docs/V3.20_Supplement_TLiftK_ThetaLift_Construction.md) | Expands TLiftK into its 14-field Tools_k package and traces the nonvanishing/theta-lift/projection proof skeleton feeding the Galois row. |
 | [V3.20 supplement — VWin descent input](docs/V3.20_Supplement_VWin_Descent_Input.md) | Traces the exact SR.descWeak theorem used by VWin, the RunTh trace-formula dichotomy, and split-rigidity elimination of the obstruction branch. |
 | [V3.20 axiom-check script](checks/Check_FontaineBcris_Axioms.lean) | Prepared `#print axioms` checks for the assembled FontaineBcris theorem and its main inputs; intended to run in the pinned upstream Lean project. |
@@ -92,6 +93,8 @@ The main remaining human-exposition bottleneck is the arithmetic inequality (M).
 
 The finite arithmetic certificate checks only its stated finite examples. These are diagnostic checks, **not** a proof of the general automorphic or arithmetic Theta/Rallis hypotheses.
 ## Current research direction
+
+V3.49 advances the linked-preframe branch through coefficient descent and uniform right inverses; the initial étale basis, topological basis existence, Frobenius-divisibility unit lemma and bounded Frobenius-matrix descent are the next deep inputs.
 
 V3.48 compresses the stable image and saturated lattice construction into finite quotient stabilization and a PID basis lift. The remaining linked-preframe inputs are étale basis construction, coefficient descent, integral limit-vector membership, twisted congruence and right-inverse lifting.
 
